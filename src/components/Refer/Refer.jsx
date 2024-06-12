@@ -1,8 +1,7 @@
-import React from "react"
-import Back from "../common/back/Back"
+import React from 'react'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
-import './team.css' 
+import './Refer.css' 
 const features = [
   { name: '1-Rank', description: 'Designed by Good Goods, Inc.' },
   { name: 'Amazon', description: 'Solid walnut base with rare earth magnets and powder coated steel card cover' },
@@ -12,12 +11,10 @@ const features = [
   { name: 'Business Consultant', description: 'Made from natural materials. Grain and color vary with each item.' },
 ]
 
-
-const Team = () => {
+export default function Refer() {
   return (
     <>
-      <Back title='Mentor' />
-      
+    
       <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8 border mt-5">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
         <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
@@ -105,8 +102,7 @@ const Team = () => {
   </span>
   
 </div>
+
     </>
   )
 }
-
-export default Team

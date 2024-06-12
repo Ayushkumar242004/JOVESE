@@ -9,7 +9,7 @@ const Hero = () => {
         <div className='container'>
           <div className='row'>
             <Heading subtitle='WELCOME TO JOVESE' title='Supercharge your carrier with longterm mentorship' />
-            <p>Land your dream job, role, and company faster than ever with 1:1 long term mentorship</p>
+            <p style={{fontSize:'1.5rem', color:'white', marginBottom:'30px'}}>Land your dream job, role, and company faster than ever with 1:1 long term mentorship</p>
             <button className="SelectMentor">
               Select a Mentor for free trial <i className='fa fa-long-arrow-alt-right'></i>
             </button>
@@ -26,7 +26,9 @@ const Hero = () => {
                     marginLeft:'5px',
                     borderRadius:'10px',
                     width:'45rem',
-                    height:'50px'
+                    height:'50px',
+                    border:'2px solid black',
+                    fontSize:'20px',
                   }}
                 />
                 <button className='find'>
@@ -40,23 +42,25 @@ const Hero = () => {
       <div className='margin'></div>
 
       {/* Container with 10 buttons */}
-      <div className="button-container">
-        <div className="up">
-        <button className="hero-button">Frontend</button>
-        <button className="hero-button">Backend</button>
-        <button className="hero-button">Full Stack</button>
-        <button className="hero-button">DevOps</button>
-        <button className="hero-button">Cloud Engineer</button>
+      <div >
+      <div className="button-container " >
+        <div className="up" >
+        <button className="hero-button" style={{marginTop:'70px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Frontend</span></button>
+        <button className="hero-button"  style={{marginTop:'70px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Backend</span></button>
+        <button className="hero-button"  style={{marginTop:'70px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Full Stack</span></button>
+        <button className="hero-button"  style={{marginTop:'70px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Devops</span></button>
+        <button className="hero-button"  style={{marginTop:'70px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Cloud Engineering</span></button>
         
         </div>
        <div className="down">
-       <button className="hero-button">Data Science</button>
-       <button className="hero-button">Data Analyst</button>
-        <button className="hero-button">Product Engineer</button>
-        <button className="hero-button">UI/UX Designer</button>
-        <button className="hero-button">Marketing</button>
+       <button className="hero-button"  style={{marginTop:'10px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Data Science</span></button>
+       <button className="hero-button"  style={{marginRight:'10px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Data Analyst</span></button>
+        <button className="hero-button"  style={{marginRight:'10px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Product Engineer</span></button>
+        <button className="hero-button" style={{marginRight:'10px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>UI/UX Designer</span></button>
+        <button className="hero-button"  style={{marginRight:'10px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Marketing</span></button>
        </div>
        
+      </div>
       </div>
     </>
   );

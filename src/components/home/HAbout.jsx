@@ -1,7 +1,6 @@
 import React from "react";
-import OnlineCourses from "../allcourses/OnlineCourses";
 import Heading from "../common/heading/Heading";
-import "../allcourses/courses.css";
+
 {/* <img src="https://images.ctfassets.net/q5ulk4bp65r7/3TBS4oVkD1ghowTqVQJlqj/2dfd4ea3b623a7c0d8deb2ff445dee9e/Consumer_Wordmark.svg" height="20" width="112" alt="Coinbase Logo" class="sc-bTTELM drDsGL"></img> */}
 {/* <img src="https://www.adobe.com/content/dam/cc/icons/Adobe_Corporate_Horizontal_Red_HEX.svg" alt="Adobe, Inc."></img> */}
 // Define an array of tech companies with their names and icon URLs
@@ -42,7 +41,9 @@ const HAbout = () => {
             ))}
           </div>
         </div>
-        <OnlineCourses />
+        
+          
+
       </section>
       <style jsx>{`
         .container {
