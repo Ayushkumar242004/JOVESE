@@ -1,4 +1,5 @@
 import React from 'react';
+import Back from "../common/back/Back";
 import {
   MDBCol,
   MDBContainer,
@@ -19,26 +20,26 @@ import {
 
 export default function ProfilePage() {
   return (
+    <>
+     <Back title="Explore mentors" />
+
     <section style={{ backgroundColor: '#eee' }}>
       <MDBContainer className="py-5">
+      
         <MDBRow>
           <MDBCol>
             <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
-              <MDBBreadcrumbItem>
-                <a href='#'>Home</a>
-              </MDBBreadcrumbItem>
-              <MDBBreadcrumbItem>
-                <a href="#">User</a>
-              </MDBBreadcrumbItem>
-              <MDBBreadcrumbItem active>User Profile</MDBBreadcrumbItem>
+          
+              <MDBBreadcrumbItem >Mentor Profile</MDBBreadcrumbItem>
             </MDBBreadcrumb>
           </MDBCol>
         </MDBRow>
 
         <MDBRow>
+      
           <MDBCol lg="4">
-            <MDBCard className="mb-4">
-              <MDBCardBody className="text-center">
+            <MDBCard className="mb-6" style={{ width: '300px' }}>
+              <MDBCardBody className="text-center" style={{display:'flex',flexDirection:'column'}}>
                 <MDBCardImage
                   src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
                   alt="avatar"
@@ -54,7 +55,7 @@ export default function ProfilePage() {
               </MDBCardBody>
             </MDBCard>
 
-            <MDBCard className="mb-4 mb-lg-0">
+            <MDBCard className="mb-4 mb-lg-0" style={{ width: '300px' }}>
               <MDBCardBody className="p-0">
                 <MDBListGroup flush className="rounded-3">
                   <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
@@ -81,12 +82,14 @@ export default function ProfilePage() {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol lg="8">
-            <MDBCard className="mb-4">
-              <MDBCardBody>
+        
+          <MDBRow lg="8" style={{display:'flex', flexDirection:'row',marginLeft:'100px'}}>
+            <MDBCard className="mb-4" style={{display:'flex', flexDirection:'row',marginLeft:'20rem',marginTop:'-43.7rem', height:'450px'}}>
+             
+              <MDBCardBody >
                 <MDBRow>
                   <MDBCol sm="3">
-                    <MDBCardText>Full Name</MDBCardText>
+                    <MDBCardText style={{display:'flex',flexDirection:'row'}}>Full Name</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
                     <MDBCardText className="text-muted">Johnatan Smith</MDBCardText>
@@ -95,7 +98,7 @@ export default function ProfilePage() {
                 <hr />
                 <MDBRow>
                   <MDBCol sm="3">
-                    <MDBCardText>Email</MDBCardText>
+                    <MDBCardText style={{display:'flex',flexDirection:'row'}}>Email</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
                     <MDBCardText className="text-muted">example@example.com</MDBCardText>
@@ -104,7 +107,7 @@ export default function ProfilePage() {
                 <hr />
                 <MDBRow>
                   <MDBCol sm="3">
-                    <MDBCardText>Phone</MDBCardText>
+                    <MDBCardText style={{display:'flex',flexDirection:'row'}}>Phone</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
                     <MDBCardText className="text-muted">(097) 234-5678</MDBCardText>
@@ -113,7 +116,7 @@ export default function ProfilePage() {
                 <hr />
                 <MDBRow>
                   <MDBCol sm="3">
-                    <MDBCardText>Mobile</MDBCardText>
+                    <MDBCardText style={{display:'flex',flexDirection:'row'}}>Mobile</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
                     <MDBCardText className="text-muted">(098) 765-4321</MDBCardText>
@@ -122,7 +125,7 @@ export default function ProfilePage() {
                 <hr />
                 <MDBRow>
                   <MDBCol sm="3">
-                    <MDBCardText>Address</MDBCardText>
+                    <MDBCardText style={{display:'flex',flexDirection:'row'}}>Address</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
                     <MDBCardText className="text-muted">Bay Area, San Francisco, CA</MDBCardText>
@@ -133,8 +136,8 @@ export default function ProfilePage() {
 
             <MDBRow>
               <MDBCol md="6">
-                <MDBCard className="mb-4 mb-md-0">
-                  <MDBCardBody>
+                <MDBCard className="mb-4 mb-md-0" style={{display:'flex', flexDirection:'row',marginLeft:'19rem',marginTop:'-13.7rem', height:'450px',width:'300px',marginRight:'100px'}}>
+                  <MDBCardBody style={{backgroundColor:'white'}}>
                     <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">assignment</span> Project Status</MDBCardText>
                     <MDBCardText className="mb-1" style={{ fontSize: '.77rem' }}>Web Design</MDBCardText>
                     <MDBProgress className="rounded">
@@ -165,8 +168,8 @@ export default function ProfilePage() {
               </MDBCol>
 
               <MDBCol md="6">
-                <MDBCard className="mb-4 mb-md-0">
-                  <MDBCardBody>
+                <MDBCard className="mb-4 mb-md-0" style={{display:'flex', flexDirection:'row',marginLeft:'20.5rem',marginTop:'-13.7rem', height:'450px',width:'300px',}}>
+                  <MDBCardBody style={{backgroundColor:'white'}}>
                     <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">assignment</span> Project Status</MDBCardText>
                     <MDBCardText className="mb-1" style={{ fontSize: '.77rem' }}>Web Design</MDBCardText>
                     <MDBProgress className="rounded">
@@ -196,9 +199,12 @@ export default function ProfilePage() {
                 </MDBCard>
               </MDBCol>
             </MDBRow>
-          </MDBCol>
+          </MDBRow>
+       
         </MDBRow>
+        
       </MDBContainer>
     </section>
+    </>
   );
 }

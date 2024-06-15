@@ -21,12 +21,12 @@ function App() {
         <Header />
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/about' component={About} />
+          {/* <Route exact path='/about' component={About} /> */}
           <Route exact path='/refer_earn' component={CourseHome} />
-          <Route exact path='/mentor' component={Team} />
-          <Route exact path='/pricing' component={Pricing} />
+          <Route exact path='/demo_lectures' component={Team} />
+          <Route exact path='/explore_mentors' component={Pricing} />
           <Route exact path='/resumeBuilder' component={Blog} />
-          <Route exact path='/contact' component={Contact} />
+          {/* <Route exact path='/contact' component={Contact} /> */}
           <Route exact path='/mentor_profile' component={ProfilePage} />
           <Route exact path='/SignUp' component={SignUp} />
           <Route exact path='/StartPage' component={StartPage} />

@@ -1,47 +1,62 @@
-.price .items {
-  padding: 40px;
-  text-align: center;
-}
-.price h1 {
-  font-size: 50px;
-  margin: 20px 0;
-  color: #1eb2a6;
-}
-.price h1 span {
-  font-size: 20px;
-  margin-right: 5px;
-  color: #000;
-}
-.price p {
-  color: black;
-  margin: 40px 0;
-}
-/*--------------faq-------------*/
-.faq .container {
-  max-width: 70%;
-  border-radius: 5px;
-}
-.faq .box {
-  background-color: #fff;
-  margin-bottom: 20px;
-}
-.faq button {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 15px 20px;
-}
-.faq h2 {
-  font-weight: 500;
-}
-.faq p {
-  padding: 20px;
-}
-.faq .accordion:hover {
-  background-color: #1eb2a6;
-  color: #fff;
+.custom-card {
+  width: 300px;
+  height: 400px;
 }
 
-/*--------------faq-------------*/
+.custom-card-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.custom-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.mainCard{
+  display: flex;
+  flex-wrap: wrap; /* Allow the cards to wrap to the next line */
+  justify-content: center;
+}
+@media (max-width: 1000px) {
+  .mainCard {
+    display:flex;
+    
+    flex-direction: column;
+  }
+
+  
+}
+.button-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tags {
+  margin-top: 5px; /* Space between title and tags */
+  text-align: center; /* Center the tags */
+}
+
+.tag {
+  display: inline-block;
+  background-color: #007bff; /* Background color for the tag */
+  color: white; /* Text color */
+  padding: 5px 10px; /* Padding for the tag */
+  border-radius: 15px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  margin-bottom: 5px; /* Margin between tags if you add more */
+}
+
+.tag2{
+  display: inline-block;
+  background-color: red; /* Background color for the tag */
+  color: white; /* Text color */
+  padding: 5px 10px; /* Padding for the tag */
+  border-radius: 15px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  margin: 5px; /* Margin between tags if you add more */
+}

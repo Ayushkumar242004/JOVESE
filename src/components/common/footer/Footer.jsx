@@ -8,18 +8,18 @@ const Footer = () => {
       
       <footer>
         <div className='container padding'>
-          <div className='box logo'>
+          <div className='box logo' style={{display:'flex',flexDirection:'column',marginTop:'6.5rem'}}>
             <h1>JOVESE</h1>
             <span>ONLINE EDUCATION & LEARNING</span>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-
+            
             <i className='fab fa-facebook-f icon'></i>
             <i className='fab fa-twitter icon'></i>
             <i className='fab fa-instagram icon'></i>
           </div>
           <div className='box link'>
             <h3>Explore</h3>
-            <ul>
+            
+            <ul >
               <li>Resume Builder</li>
               <li>Pro plan</li>
               <li>Blog</li>
@@ -27,6 +27,7 @@ const Footer = () => {
               <li>Explore Mentors</li>
               <li>Live webinars</li>
             </ul>
+           
           </div>
           <div className='box link'>
             <h3>Quick Links</h3>

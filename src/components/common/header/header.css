@@ -87,7 +87,7 @@ header ul li a:hover {
 .socialTop {
   display: flex;
   position:absolute;
-  left:0px;
+  left:8rem;
   top:4.5rem;
   margin-bottom: 100px;
 }

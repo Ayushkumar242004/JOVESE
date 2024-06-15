@@ -6,8 +6,8 @@ const Head = () => {
       <section className="head">
         <div className="container flexSB">
           <div className="logo">
-          <style>
-        {`
+            <style>
+              {`
           .search-input::placeholder {
             
           }
@@ -18,7 +18,7 @@ const Head = () => {
           }
             
         `}
-      </style>
+            </style>
             <div className="search">
               <h1 style={{ position: "relative", fontStyle: "italic" }}>
                 JOVESE
@@ -56,14 +56,13 @@ const Head = () => {
                   type="text"
                   className="search-input"
                   placeholder="Searching? here i am"
-                 
                 />
               </h1>
             </div>
 
             <div className="socialTop">
               <div className="icon-container">
-                <i className="fas fa-bolt icon"></i>
+                <i className="fas fa-bolt icon" style={{padding:'5px'}}></i>
               </div>
               <span style={{ color: "red", fontWeight: "bold" }}>
                 AI powered
