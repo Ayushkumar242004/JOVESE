@@ -32,7 +32,7 @@ const Header = () => {
               <Link to='/mentor_profile'>Mentor's Profile</Link>
             </li>
             <li>
-              <Link to='/SignUp'>SignUp/Login for students</Link>
+              <Link to='/SignUp'>SignUp for students</Link>
             </li>
             <li>
               <Link to='/StartPage'>Start Page</Link>
