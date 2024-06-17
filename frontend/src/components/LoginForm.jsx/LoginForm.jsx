@@ -2,18 +2,25 @@ import React from 'react'
 import './LoginForm.css';
 import { FaUser } from "react-icons/fa"
 import { FaLock } from "react-icons/fa";
+import Back from "../common/back/Back";
 
 const LoginForm = () => {
   return (
-    <div className='wrapper'>
+    <>
+    <Back title=" Login for students" />
+    <div className='wrapper' style={{backgroundColor:'black'}}>
       <form action="">
         <h1>Login</h1>
         <div className="input-box">
             <input type="text" placeholder='UserName' required />
-            <FaUser className='icon' />
+            <FaUser className='icon'  />
         </div>
         <div className='input-box'>
             <input type="password" placeholder='Password' required />
+            <FaLock className='icon' />
+        </div>
+        <div className='input-box'>
+            <input type="confirm_password" placeholder='Confirm Password' required />
             <FaLock className='icon' />
         </div>
         <div className="remember-forgot">
@@ -28,6 +35,7 @@ const LoginForm = () => {
         </div>
       </form>
     </div>
+    </>
   )
 }
 

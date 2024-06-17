@@ -88,3 +88,7 @@
 .register-link p a:hover{
     text-decoration: underline;
 }
+
+.icon{
+    margin-top: -17px;
+}
