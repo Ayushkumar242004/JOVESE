@@ -17,6 +17,7 @@ import ResumeBuilder from './components/ResumeBuilder/ResumeBuilder'
 import SignUp from "./components/SignUp/SignUp";
 import LoginForm from "./components/LoginForm.jsx/LoginForm";
 import LoginFormMentors from "./components/LoginFormMentors/LoginFormMentors";
+import StudentProfile from "./components/StudentProfileForm/StudentProfileForm";
 import StartPage from "./components/StartPage/StartPage";
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route exact path='/resumeBuilder' component={Blog} />
           {/* <Route exact path='/contact' component={Contact} /> */}
           <Route exact path='/mentor_profile' component={ProfilePage} />
+          <Route exact path='/Student_Profile_Form' component={StudentProfile} />
           <Route exact path='/SignUp' component={SignUp} />
           <Route exact path='/login' component={LoginForm} />
           <Route exact path='/login_mentors' component={LoginFormMentors} />

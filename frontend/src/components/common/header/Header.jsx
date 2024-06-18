@@ -32,9 +32,6 @@ const Header = () => {
               <Link to='/mentor_profile'>Mentor's Profile</Link>
             </li>
             <li>
-
-              <Link to='/SignUp'>SignUp for students</Link>
-
               <Link to='/SignUp'>SignUp students</Link>
             </li>
             <li>
@@ -46,6 +43,9 @@ const Header = () => {
             </li>
             <li>
               <Link to='/StartPage'>Start Page</Link>
+            </li>
+            <li>
+              <Link to='/Student_Profile_Form'>Student Profile Form</Link>
             </li>
             {/* <li>
               <Link to='/contact'>Contact</Link>
