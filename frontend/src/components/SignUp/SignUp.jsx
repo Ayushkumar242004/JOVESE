@@ -22,27 +22,8 @@ const SignUp = () => {
             <input autocomplete="false" placeholder='Username' name="hidden" type="text"></input>
             <FaUser className='icon' />
         </div>
-        <div className="input-box">
-            {/* <input autocomplete="false" type="password" placeholder='Confirm Password'  required /> */}
-            <input autocomplete="false" placeholder='Email' name="hidden" type="text"></input>
-            <FaMailBulk className='icon' />
-        </div>
-        {/* <div className="input-box">
-            <input type="number" placeholder='Phone number' required />
-            <FaPhone  className='icon' />
-        </div> */}
-        <div className="input-box">
-            <input type="text" placeholder='Where r you coming from ?' required />
-            <FaEnvelope className='icon' />
-        </div>
-        <div className="input-box">
-            <input type="text" placeholder='Why r you coming here?' required />
-            <FaEnvelope className='icon' />
-        </div>
-        <div className="input-box">
-            <input type="text" placeholder='Interests' required />
-            <FaEnvelope className='icon' />
-        </div>
+        
+       
          <div className="input-box">
             {/* <input autocomplete="false" type="password" placeholder='Confirm Password'  required /> */}
             <input autocomplete="false" placeholder='Password' name="hidden" type="text"></input>
