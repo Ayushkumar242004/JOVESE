@@ -1,11 +1,13 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import Head from "./Head"
+import { useAuth } from "../../store/auth"
 import "./header.css"
 
 const Header = () => {
   const [click, setClick] = useState(false)
 
+  const {isLoggedIn} =useAuth();
   return (
     <>
       <Head />
@@ -31,13 +33,22 @@ const Header = () => {
             <li>
               <Link to='/mentor_profile'>Mentor's Profile</Link>
             </li>
-            <li>
-              <Link to='/SignUp'>SignUp for students</Link>
-            </li>
-            <li>
-              <Link to='/login'>Login students</Link>
-            </li>
-            <li>
+           
+            {isLoggedIn ? (
+              <li>
+                <Link to="/logout">Logout</Link>
+              </li>
+            ) : (
+              <>
+                <li>
+                  <Link to="/StartPageSignup">SignUp</Link>
+                </li>
+                <li>
+                  <Link to="/StartPageLogin">Login</Link>
+                </li>
+              </>
+            )}
+            {/* <li>
              <Link to='/login_mentors'>Login Mentors</Link>
             </li>
             <li>
@@ -45,7 +56,7 @@ const Header = () => {
             </li>
             <li>
               <Link to='/Student_Profile_Form'>Student Profile Form</Link>
-            </li>
+            </li> */}
             {/* <li>
               <Link to='/contact'>Contact</Link>
             </li> */}

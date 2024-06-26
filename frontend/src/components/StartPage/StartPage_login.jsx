@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './StartPage.css';
 import { FaUser } from "react-icons/fa"
 import { FaLock } from "react-icons/fa";
@@ -7,11 +8,19 @@ import Back from "../common/back/Back";
 const StartPage = () => {
     return (
       <>
-      <Back title="Start Page" />
+      <Back title="who you are ?" />
         <div className='wrapper'>
         <form action="">  
-          <button type='submit'>Student</button>
-          <button type='submit'>Mentor</button>        
+        <Link to="/login">
+            <button type="button">
+                Student
+            </button>
+        </Link>
+        <Link to="/login">
+            <button type="button">
+                Mentor
+            </button>
+        </Link>     
         </form>
       </div>
       </>

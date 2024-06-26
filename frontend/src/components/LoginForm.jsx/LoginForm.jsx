@@ -1,22 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './LoginForm.css';
-import { FaUser } from "react-icons/fa"
+import { FaEnvelope } from "react-icons/fa"
 import { FaLock } from "react-icons/fa";
 import Back from "../common/back/Back";
 
 const LoginForm = () => {
+
+
+  const [credentials,setCredentials]=useState({
+    email:"",
+    password:"",
+  })
+  const handleChange=(e)=>{
+    setCredentials({...credentials,[e.target.name]:e.target.value})
+  }
+  const handleSubmit=async (e)=>{
+    e.preventDefault()
+    try {
+      
+      const response=await fetch('http://localhost:5000/api/user/login',{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify(credentials)
+      })
+
+      if(response.ok){
+        const data=await response.json()
+      }else{
+
+      }
+
+    } catch (error) {
+        console.log(error);
+    }
+  }
   return (
     <>
     <Back title=" Login for students" />
     <div className='wrapper' style={{backgroundColor:'black'}}>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <h1>Login</h1>
         <div className="input-box">
-            <input type="text" placeholder='UserName' required />
-            <FaUser className='icon'  />
+            <input type="text" placeholder='Email' name='email' onChange={handleChange} value={credentials.email}  required />
+            <FaEnvelope className='icon'  />
         </div>
         <div className='input-box'>
-            <input type="password" placeholder='Password' required />
+            <input type="password" placeholder='Password' name='password' onChange={handleChange} value={credentials.password} required />
             <FaLock className='icon' />
         </div>
         <div className="remember-forgot">

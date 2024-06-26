@@ -8,6 +8,7 @@ const Hero = () => {
       <section className='hero'>
         <div className='container'>
           <div className='row'>
+            
             <Heading subtitle='WELCOME TO JOVESE' title='Supercharge your carrier with longterm mentorship' />
             <p style={{fontSize:'1.5rem', color:'white', marginBottom:'30px'}}>Land your dream job, role, and company faster than ever with 1:1 long term mentorship</p>
             <button className="SelectMentor">

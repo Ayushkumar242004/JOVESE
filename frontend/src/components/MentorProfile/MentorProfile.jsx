@@ -3,7 +3,7 @@ import Back from "../common/back/Back";
 export default function Example() {
   return (
     <>
-     <Back title="Login Mentors" />
+     <Back title="Signup Mentors" />
     <div
       style={{
         justifyContent: "center",
