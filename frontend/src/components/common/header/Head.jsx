@@ -60,7 +60,7 @@ const Head = () => {
               </h1>
             </div>
 
-            <div className="socialTop">
+            <div className="socialTop" style={{marginLeft:'-100px'}}>
               <div className="icon-container">
                 <i className="fas fa-bolt icon" style={{padding:'5px'}}></i>
               </div>

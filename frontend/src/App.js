@@ -2,25 +2,21 @@ import React from "react"; // Import React library
 import "./App.css";
 import Header from "./components/common/header/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import About from "./components/about/About";
+
 import CourseHome from "./components/allcourses/CourseHome";
-import Team from "./components/team/Team";
+import Team from "./components/demoLectures/Team";
 import Pricing from "./components/pricing/Pricing";
 import Blog from "./components/blog/Blog";
-import Contact from "./components/contact/Contact";
 import Footer from "./components/common/footer/Footer";
 import Home from "./components/home/Home";
-import ProfilePage from "./components/Mentor/Mentor";
-import ResumeBuilder from './components/ResumeBuilder/ResumeBuilder'
+// import ProfilePage from "./components/Mentor/Mentor";
 import SignUp from "./components/SignUp/Signup2"
 import LoginForm from "./components/LoginForm.jsx/LoginForm";
-import LoginFormMentors from "./components/LoginFormMentors/LoginFormMentors";
 import StudentProfile from "./components/StudentProfileForm/StudentProfileForm";
 import StartPagelogin from "./components/StartPage/StartPage_login";
 import StartPageSignup from "./components/StartPage/StartPAge_Signup";
-import Mentor_signup from "./components/MentorProfile/MentorProfile"
+import Dashboard from "./components/Dashboard/Dashboard"
 import LogOut from "./components/SignUp/Logout";
 function App() {
   return (
@@ -29,22 +25,18 @@ function App() {
         <Header />
         <Switch>
           <Route exact path='/' component={Home} />
-          {/* <Route exact path='/about' component={About} /> */}
           <Route exact path='/refer_earn' component={CourseHome} />
           <Route exact path='/demo_lectures' component={Team} />
           <Route exact path='/explore_mentors' component={Pricing} />
           <Route exact path='/resumeBuilder' component={Blog} />
-          {/* <Route exact path='/contact' component={Contact} /> */}
-          <Route exact path='/mentor_profile' component={ProfilePage} />
+          <Route exact path='/dashboard' component={Dashboard} />
           <Route exact path='/Student_Profile_Form' component={StudentProfile} />
           <Route exact path='/StartPageSignup' component={StartPageSignup} />
           <Route exact path='/StartPageLogin' component={StartPagelogin} />
           <Route exact path='/login' component={LoginForm} />
           <Route exact path='/signup' component={SignUp} />
-          <Route exact path='/MentorSignup' component={Mentor_signup} />
           <Route exact path='/logout' component={LogOut} />
-          {/* <Route exact path='/StartPage' component={StartPage} /> */}
-         
+          
         </Switch>
         <Footer />
       </Router>

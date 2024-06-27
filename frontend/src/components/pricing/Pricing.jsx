@@ -1,13 +1,8 @@
 import React from "react";
 import Back from "../common/back/Back";
-// import PriceCard from "./PriceCard";
 import "./price.css";
-// import Faq from "./Faq";
-// import "../blog/blog.css";
-// import { blog } from "../../dummydata";
-// import Heading from "../common/heading/Heading";
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
+import { explore_mentors } from '../../dummydata';
+
 import {
   MDBCard,
   MDBCardTitle,
@@ -48,7 +43,6 @@ export default function Pricing() {
       </div>
       </div>
       <div className="mainCard" style={{ display: "flex" }}>
-     
           {/* card 2 */}
         <div
           className="top"
@@ -85,6 +79,7 @@ export default function Pricing() {
           </MDBCard>
         </div>
 
+      {explore_mentors.map((mentor) => (
         <div
           className="top"
           style={{
@@ -94,27 +89,24 @@ export default function Pricing() {
             margin: "50px",
           }}
         >
-          <MDBCard className="custom-card">
+          <MDBCard className="custom-card" key={mentor.title}>
             <MDBCardImage
-              src="https://tse4.mm.bing.net/th?id=OIP.cDhRJSU3YESH2cX-Drsu5gAAAA&pid=Api&P=0&h=220"
+              src={mentor.image}
               alt="..."
               position="top"
               className="custom-card-image"
+              style={{ objectFit: 'cover' }}
             />
             <MDBCardBody className="custom-card-body">
-              <MDBCardTitle>Card title</MDBCardTitle>
+              <MDBCardTitle>{mentor.title}</MDBCardTitle>
               <div className="tags">
-                <span className="tag">Frontend Developer</span>
+                <span className="tag">{mentor.job}</span>
               </div>
-              <MDBCardText>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </MDBCardText>
+              <MDBCardText>{mentor.description}</MDBCardText>
               <div className="tags2">
-                <span className="tag2">Amazon</span>
-                <span className="tag2">Facebook</span>
-                <span className="tag2">Oracle</span>
+                {mentor.companies.split(', ').map((company) => (
+                  <span className="tag2">{company}</span>
+                ))}
               </div>
             </MDBCardBody>
           </MDBCard>
@@ -156,8 +148,10 @@ export default function Pricing() {
           </MDBCard>
          
         </div>
+        </div>
+      ))}
+  
 
-       
       </div>
     </>
   );
