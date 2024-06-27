@@ -9,8 +9,6 @@ const Blog = () => {
     <>
       <Back title='Resume Builder' />
        <ResumeBuilder />
-        
-     
     </>
   )
 }

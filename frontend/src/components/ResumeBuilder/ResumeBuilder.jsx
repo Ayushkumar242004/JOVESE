@@ -1,7 +1,7 @@
 import React from 'react';
 import styled,  { createGlobalStyle } from 'styled-components';
 import Heading from "../common/heading/Heading"
-import "../about/about.css"
+import "../exploreOurMentors/about.css"
 import Back from "../common/back/Back"
 import { homeAbout } from "../../dummydata"
 // Define styled components

@@ -1,9 +1,9 @@
 import React from "react"
-import AboutHome from "../about/AboutHome"
+import AboutHome from "../exploreOurMentors/AboutHome"
 import Hblog from "./Hblog"
-import HAbout from "./HAbout"
+import HCompanies from "./HCompanies"
 import Hero from "./hero/Hero"
-import Hprice from "./Hprice"
+import Hfaq from "./Hfaq"
 import Testimonal from "./testimonal/Testimonal"
 import Three from "../Three/three"
 const Home = () => {
@@ -11,11 +11,11 @@ const Home = () => {
     <>
       <Hero />
       <AboutHome />
-      <HAbout />
+      <HCompanies />
       <Testimonal /> 
       <Hblog />
      <Three />
-      <Hprice />
+      <Hfaq />
     </>
   )
 }

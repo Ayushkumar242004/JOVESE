@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import Head from "./Head"
+
 import { useAuth } from "../../store/auth"
 import "./header.css"
 
@@ -31,7 +32,7 @@ const Header = () => {
             </li>
             
             <li>
-              <Link to='/mentor_profile'>Mentor's Profile</Link>
+              <Link to='/dashboard'>dashboard</Link>
             </li>
            
             {isLoggedIn ? (
