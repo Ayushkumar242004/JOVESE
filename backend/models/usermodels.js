@@ -1,59 +1,67 @@
-const mongoose=require('mongoose')
-const bcrypt=require('bcrypt');
-const jwt=require('jsonwebtoken')
-const userSchema=new mongoose.Schema({
-    username:{
-        type:String,
-        required:true,
-    },
-    email:{
-        type:String,
-        required:true,
-        unique:true
-    },
-    password:{
-        type:String,
-        required:true
-    },
-    isAdmin: {
-        type: Boolean,
-        default: false,
-    },
-})
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
+const userSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required: true,
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    password: {
+        type: String,
+        required: true,
+    },
+    role: {
+        type: String,
+        required: true,
+        enum: ["User", "Mentor", "Admin"],
+        default: "User",
+    },
+});
+
+// Pre-save hook to hash the password before saving
 userSchema.pre('save', async function(next) {
-    const authentication = this;
+    const user = this;
     
-    // If the password field has not been modified, skip hashing and continue with the save
-    if (!authentication.isModified("password")) {
+    if (!user.isModified('password')) {
         return next();
     }
-    // console.log("log");
-    // Try hashing the password before saving
+
     try {
-        const hash = await bcrypt.hash(authentication.password, 10);
-        authentication.password = hash;
-        next(); // Proceed to save the user document
+        const salt = await bcrypt.genSalt(10);
+        const hash = await bcrypt.hash(user.password, salt);
+        user.password = hash;
+        next();
     } catch (error) {
-        next(error); // Pass any errors to the next middleware
+        next(error);
     }
 });
 
-userSchema.methods.isPasswordValid=async function(password){
-    return bs.compare(password,this.password);
-}
+// Method to validate password
+userSchema.methods.isPasswordValid = async function(password) {
+    return bcrypt.compare(password, this.password);
+};
 
-userSchema.methods.generateToken =function(){
+// Method to generate JWT token
+userSchema.methods.generateToken = function() {
     try {
-        return jwt.sign({
-            userId:this._id.toString(),
-            email:this.email,
-            isAdmin:this.isAdmin,
+        const token = jwt.sign({
+            userId: this._id.toString(),
+            email: this.email,
+            role: this.role,
         },
         process.env.JWT_SECRET_KEY
         );
+        return token;
     } catch (error) {
-        console.log(error);
+        console.error('Error generating token', error);
+        throw error;
     }
 };
-module.exports= mongoose.model('authentication',userSchema)
+
+module.exports = mongoose.model('User', userSchema);

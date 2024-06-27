@@ -3,7 +3,8 @@ import './LoginForm.css';
 import { FaEnvelope } from "react-icons/fa"
 import { FaLock } from "react-icons/fa";
 import Back from "../common/back/Back";
-
+import { toast } from 'react-toastify';
+import { useAuth } from '../store/auth';
 const LoginForm = () => {
 
 
@@ -11,9 +12,9 @@ const LoginForm = () => {
     email:"",
     password:"",
   })
-  const handleChange=(e)=>{
-    setCredentials({...credentials,[e.target.name]:e.target.value})
-  }
+
+
+  const {storeTokenInLS}=useAuth()
   const handleSubmit=async (e)=>{
     e.preventDefault()
     try {
@@ -28,13 +29,21 @@ const LoginForm = () => {
 
       if(response.ok){
         const data=await response.json()
+        storeTokenInLS(data.token)
+        setCredentials({email:"",password:""})
+        toast.success("Login successful")
+        window.location.href='/';
       }else{
-
+        const responseError = await response.json();
+        toast.error(responseError.message==="Invalid Email" ? responseError.message : "Password is incorrect");
       }
 
     } catch (error) {
         console.log(error);
     }
+  } 
+   const handleChange=(e)=>{
+    setCredentials({...credentials,[e.target.name]:e.target.value})
   }
   return (
     <>

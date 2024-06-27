@@ -20,7 +20,7 @@ const LogOut = () => {
         Logoutuser();
     },[])
   return (
-    window.location.href = '/login'
+    window.location.href = '/'
   )
 }
 

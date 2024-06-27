@@ -43,7 +43,7 @@ const SignUp = () => {
                 const responseError = await response.json();
                 toast.error(responseError.extraDetails ? responseError.extraDetails : responseError.message);
                 if (responseError.message === "You have an account already you can Login instead") {
-                    // navigate("/login"); // Uncomment this to navigate to login
+                    window.location.href = '/login'; // Uncomment this to navigate to login
                 }
             }
         } catch (error) {

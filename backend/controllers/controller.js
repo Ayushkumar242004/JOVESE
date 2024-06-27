@@ -11,9 +11,9 @@ const home=(req,res)=>{
 const signup=async (req,res)=>{
     try{
         const {username,email,password,confirmPassword}=req.body;
-        if(password.toString()!==confirmPassword.toString()){
-            res.status(400).json({message:"Confirm password is different from password"})
-        }
+        // if(password.toString()!==confirmPassword.toString()){
+        //     res.status(400).json({message:"Confirm password is different from password"})
+        // }
         const userExist= await collection.findOne({email});
 
         if(userExist){
@@ -39,21 +39,37 @@ const signup=async (req,res)=>{
 }
 const userdata=(req,res)=>{
     try {
-        
+        const userData=req.user;
+        if(!userData) return res.status(401).json({ message: "Unauthorized HTTP, Token not provided" });
+        return res.status(200).json({  userData });  
     } catch (error) {
-        console.log(error);
+        console.log(`Error form user route ${error}`);
     }
 }
 
-const login=(req,res)=>{
+const login= async (req,res)=>{
     try {
-        const {email,password}=req.body
-        const userExist=collection.findOne({email})
+        const {email,password}=req.body;
+        
+        const userExist= await collection.findOne({email});
+        
         if(!userExist){
             res.status(400).json({message:"User not found"})
         }
+
+        const validpass= await userExist.isPasswordValid(password);
+        // console.log(validpass);
+        if(validpass){
+            res.status(200).json({
+                msg:"Login successful",
+                token: await userExist.generateToken(),
+                userId: userExist.toString(),
+            });
+        }else{
+            res.status(400).json({message:"Invalid password"})
+        }
     } catch (error) {
-        console.log(error);
+        res.status(500).json("Internal server error");
     }
 }
 module.exports={home,signup,userdata,login}
