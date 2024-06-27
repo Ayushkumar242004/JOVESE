@@ -79,6 +79,7 @@ export default function Pricing() {
           </MDBCard>
         </div>
 
+
       {explore_mentors.map((mentor) => (
         <div
           className="top"
@@ -110,6 +111,7 @@ export default function Pricing() {
               </div>
             </MDBCardBody>
           </MDBCard>
+
          
         </div>
 
@@ -151,6 +153,9 @@ export default function Pricing() {
         </div>
       ))}
   
+
+        </div>
+      
 
       </div>
     </>
