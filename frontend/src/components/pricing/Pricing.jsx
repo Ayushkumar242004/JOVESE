@@ -19,6 +19,9 @@ import {
 } from "mdb-react-ui-kit";
 
 export default function Pricing() {
+
+
+
   return (
     <>
       <Back title="Explore mentors" />
@@ -26,7 +29,7 @@ export default function Pricing() {
       <div>
       <div className="button-container " >
        
-        <button className="hero-button" style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Frontend</span></button>
+        <button className="hero-button"   style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Frontend</span></button>
         <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Backend</span></button>
         <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Full Stack</span></button>
         <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Devops</span></button>
@@ -45,41 +48,7 @@ export default function Pricing() {
       </div>
       </div>
       <div className="mainCard" style={{ display: "flex" }}>
-        <div
-          className="top"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            textAlign: "center",
-            margin: "50px",
-          }}
-        >
-          <MDBCard className="custom-card">
-            <MDBCardImage
-              src="https://tse4.mm.bing.net/th?id=OIP.LtLk-vQkLJGggWTN032pPwHaLH&pid=Api&P=0&h=220"
-              alt="..."
-              position="top"
-              className="custom-card-image"
-              style={{objectFit:'cover'}}
-            />
-            <MDBCardBody className="custom-card-body">
-              <MDBCardTitle>Card title</MDBCardTitle>
-              <div className="tags">
-                <span className="tag">Frontend Developer</span>
-              </div>
-              <MDBCardText>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </MDBCardText>
-              <div className="tags2">
-                <span className="tag2">Amazon</span>
-                <span className="tag2">Facebook</span>
-                <span className="tag2">Oracle</span>
-              </div>
-            </MDBCardBody>
-          </MDBCard>
-        </div>
+     
           {/* card 2 */}
         <div
           className="top"
@@ -188,144 +157,7 @@ export default function Pricing() {
          
         </div>
 
-        <div
-          className="top"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            textAlign: "center",
-            margin: "50px",
-          }}
-        >
-          <MDBCard className="custom-card">
-            <MDBCardImage
-              src="https://tse4.mm.bing.net/th?id=OIP.FzW-DDNoSlc87wAofxswfwHaE7&pid=Api&P=0&h=220"
-              alt="..."
-              position="top"
-              className="custom-card-image"
-            />
-            <MDBCardBody className="custom-card-body">
-              <MDBCardTitle>Card title</MDBCardTitle>
-              <div className="tags">
-                <span className="tag">Frontend Developer</span>
-              </div>
-              <MDBCardText>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </MDBCardText>
-              <div className="tags2">
-                <span className="tag2">Amazon</span>
-                <span className="tag2">Facebook</span>
-                <span className="tag2">Oracle</span>
-              </div>
-            </MDBCardBody>
-          </MDBCard>
-         
-        </div>
-
-        <div
-          className="top"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            textAlign: "center",
-            margin: "50px",
-          }}
-        >
-          <MDBCard className="custom-card">
-            <MDBCardImage
-              src="https://tse1.mm.bing.net/th?id=OIP.9sDhF4sLO_eNblwkFcrIBQHaE7&pid=Api&P=0&h=220"
-              alt="..."
-              position="top"
-              className="custom-card-image"
-            />
-            <MDBCardBody className="custom-card-body">
-              <MDBCardTitle>Card title</MDBCardTitle>
-              <div className="tags">
-                <span className="tag">Frontend Developer</span>
-              </div>
-              <MDBCardText>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </MDBCardText>
-              <div className="tags2">
-                <span className="tag2">Amazon</span>
-                <span className="tag2">Facebook</span>
-                <span className="tag2">Oracle</span>
-              </div>
-            </MDBCardBody>
-          </MDBCard>
-         
-        </div>
-        <div
-          className="top"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            textAlign: "center",
-            margin: "50px",
-          }}
-        >
-          <MDBCard className="custom-card">
-            <MDBCardImage
-              src="https://tse3.mm.bing.net/th?id=OIP.t4GFHj0Q8km0AwfOmDstsQHaFj&pid=Api&P=0&h=220"
-              alt="..."
-              position="top"
-              className="custom-card-image"
-            />
-            <MDBCardBody className="custom-card-body">
-              <MDBCardTitle>Card title</MDBCardTitle>
-              <div className="tags">
-                <span className="tag">Frontend Developer</span>
-              </div>
-              <MDBCardText>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </MDBCardText>
-              <div className="tags2">
-                <span className="tag2">Amazon</span>
-                <span className="tag2">Facebook</span>
-                <span className="tag2">Oracle</span>
-              </div>
-            </MDBCardBody>
-          </MDBCard>
-         
-        </div>
-        <div
-          className="top"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            textAlign: "center",
-            margin: "50px",
-          }}
-        >
-          <MDBCard className="custom-card">
-            <MDBCardImage
-              src="https://tse1.mm.bing.net/th?id=OIP.8Jrw-yduhN6fdp5JjQNXUwHaFY&pid=Api&P=0&h=220"
-              alt="..."
-              position="top"
-              className="custom-card-image"
-            />
-            <MDBCardBody className="custom-card-body">
-              <MDBCardTitle>Card title</MDBCardTitle>
-              <MDBCardText>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </MDBCardText>
-              <div className="tags2">
-                <span className="tag2">Amazon</span>
-                <span className="tag2">Facebook</span>
-                <span className="tag2">Oracle</span>
-              </div>
-            </MDBCardBody>
-          </MDBCard>
-         
-        </div>
+       
       </div>
     </>
   );
