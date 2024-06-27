@@ -72,6 +72,40 @@ const Team = () => {
                 className="rounded-lg bg-gray-100 object-cover h-full w-full"
               />
             </div>
+
+
+
+            {/* video */}
+            <div className="h-full w-full relative">
+            <div
+              style={{
+                textAlign: "center",
+                display:"flex",
+                justifyContent:'center',
+                fontSize: "40px",
+                fontWeight: "bold",
+                color: "#333",
+                padding: "20px",
+                backgroundColor: "#f7f7f7",
+                borderRadius: "10px",
+                boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+                margin: "40px auto",
+                position:'relative',
+                left:'50%'
+              }}
+            >
+              Demo lecture
+            </div>
+            <iframe 
+                style={{ borderRadius: "30px", position: "relative",margin:'0 auto',height:'500px' , width:'1240px' }}
+                className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg transition-transform transform hover:scale-105"
+                src={`https://www.youtube.com/embed/jva0G7211l4?autoplay=1&rel=0&showinfo=0&modestbranding=1`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>

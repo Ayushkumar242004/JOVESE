@@ -1,3 +1,11 @@
+require('dotenv').config()
+const axios=require('axios')
+const jwt=require('jsonwebtoken')
+
+// const apiKey=process.env.ZOOM_API_KEY
+// const apiSecret=process.env.ZOOM_API_SECRET
+
+const token=process.env.TOKEN
 const express =require('express');
 const app=express()
 
@@ -8,6 +16,8 @@ const Connectmongo=require('./utils/db')
 
 const errormiddleware=require('./middlewares/error_middleware')
 Connectmongo();
+
+
 
 var corsOptions = {
     origin: 'http://localhost:3000',
@@ -25,3 +35,6 @@ app.use(errormiddleware)
 app.listen(PORT,()=>{
     console.log(`Example app listening on http://localhost:${PORT}`)
 })
+
+
+
