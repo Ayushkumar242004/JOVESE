@@ -25,11 +25,11 @@ function App() {
         <Header />
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/refer_earn' component={CourseHome} />
+          <Route exact path='/dashboard' component={CourseHome} />
           <Route exact path='/demo_lectures' component={Team} />
           <Route exact path='/explore_mentors' component={Pricing} />
           <Route exact path='/resumeBuilder' component={Blog} />
-          <Route exact path='/dashboard' component={Dashboard} />
+          <Route exact path='/loginform_mentors' component={Dashboard} />
           <Route exact path='/Student_Profile_Form' component={StudentProfile} />
           <Route exact path='/StartPageSignup' component={StartPageSignup} />
           <Route exact path='/StartPageLogin' component={StartPagelogin} />

@@ -13,10 +13,11 @@ function createData(name, trackingId, date, status) {
 }
 
 const rows = [
-  createData("Name 1", 18908424, "2 March 2022", "Approved"),
-  createData("Name 2 ", 18908424, "2 March 2022", "Approved"),
-  createData("Name 3", 18908424, "2 March 2022", "Approved"),
-  createData("Name 4", 18908421, "2 March 2022", "Approved"),
+  createData("First Name", "Ayush", "Last Name", "kumar"),
+  createData("Profile link", "xyz.com", "Username", "janesmith"),
+  createData("Gender", "Male", "Email", "ayu@gmail.com"),
+  createData("Country", "India", "Work experiences", "2 years"),
+  createData("LinkedIn", "abclinkedin.com", "Twitter", "xyztwitter.com"),
 ];
 
 
@@ -37,7 +38,7 @@ const makeStyle=(status)=>{
   }
   else{
     return{
-      background: '#59bfff',
+      background: 'grey',
       color: 'white',
     }
   }
@@ -46,13 +47,13 @@ const makeStyle=(status)=>{
 export default function BasicTable() {
   return (
       <div className="Table">
-      <h3>Your Refferals</h3>
+      <h3>Personal Details</h3>
         <TableContainer
           component={Paper}
           style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
         >
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
+            {/* <TableHead>
               <TableRow>
                 <TableCell>Names</TableCell>
                 <TableCell align="left">Refferal ID</TableCell>
@@ -60,22 +61,22 @@ export default function BasicTable() {
                 <TableCell align="left">Status</TableCell>
                 <TableCell align="left"></TableCell>
               </TableRow>
-            </TableHead>
+            </TableHead> */}
             <TableBody style={{ color: "white" }}>
               {rows.map((row) => (
                 <TableRow
                   key={row.name}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell component="th" scope="row">
+                  <TableCell component="th" scope="row" style={makeStyle(row.name)}>
                     {row.name}
                   </TableCell>
                   <TableCell align="left">{row.trackingId}</TableCell>
-                  <TableCell align="left">{row.date}</TableCell>
+                  <TableCell align="left"style={makeStyle(row.date)} >{row.date}</TableCell>
                   <TableCell align="left">
-                    <span className="status" style={makeStyle(row.status)}>{row.status}</span>
+                    <span className="status" >{row.status}</span>
                   </TableCell>
-                  <TableCell align="left" className="Details">Details</TableCell>
+                  {/* <TableCell align="left" className="Details">Details</TableCell> */}
                 </TableRow>
               ))}
             </TableBody>

@@ -9,7 +9,7 @@ import Sidebar from "./Sidebar";
 const CourseHome = () => {
   return (
     <>
-      <Back title='Refer and Earn' />
+      <Back title='Dashboard' />
       <div className="App">
         <div className="AppGlass">
           <Sidebar />

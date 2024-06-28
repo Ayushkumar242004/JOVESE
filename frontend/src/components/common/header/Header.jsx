@@ -19,7 +19,7 @@ const Header = () => {
               <Link to='/'>Home</Link>
             </li>
             <li>
-              <Link to='/refer_earn'>Refer and Earn</Link>
+              <Link to='/dashboard'>Dashboard</Link>
             </li>
             <li>
               <Link to='/explore_mentors'>Explore Mentors</Link>
@@ -32,7 +32,7 @@ const Header = () => {
             </li>
             
             <li>
-              <Link to='/dashboard'>dashboard</Link>
+              <Link to='/loginform_mentors'>LoginForm mentors</Link>
             </li>
            
             {isLoggedIn ? (
