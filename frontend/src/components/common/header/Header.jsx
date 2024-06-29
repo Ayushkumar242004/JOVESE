@@ -34,6 +34,9 @@ const Header = () => {
             <li>
               <Link to='/loginform_mentors'>LoginForm mentors</Link>
             </li>
+            <li>
+              <Link to='/chat'>Chat</Link>
+            </li>
            
             {isLoggedIn ? (
               <li>

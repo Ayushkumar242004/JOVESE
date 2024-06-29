@@ -18,6 +18,7 @@ import StartPagelogin from "./components/StartPage/StartPage_login";
 import StartPageSignup from "./components/StartPage/StartPAge_Signup";
 import Dashboard from "./components/Dashboard/Dashboard"
 import LogOut from "./components/SignUp/Logout";
+import Chat from "./components/Chat/Chat"
 function App() {
   return (
     <>
@@ -36,6 +37,7 @@ function App() {
           <Route exact path='/login' component={LoginForm} />
           <Route exact path='/signup' component={SignUp} />
           <Route exact path='/logout' component={LogOut} />
+          <Route exact path='/chat' component={Chat} />
           
         </Switch>
         <Footer />
