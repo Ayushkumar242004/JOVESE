@@ -12,8 +12,8 @@ const Header = () => {
   return (
     <>
       <Head />
-      <header>
-        <nav className='flexSB'>
+      <header className>
+        <nav className='flexSB '>
           <ul className={click ? "mobile-nav" : "flexSB "} onClick={() => setClick(false)}>
             <li>
               <Link to='/'>Home</Link>
@@ -31,7 +31,7 @@ const Header = () => {
               <Link to='/resumeBuilder'>Resume Builder</Link>
             </li>
             
-            <li>
+            {/* <li>
               <Link to='/loginform_mentors'>LoginForm mentors</Link>
             </li>
             <li>
@@ -52,22 +52,11 @@ const Header = () => {
                 </li>
               </>
             )}
-            {/* <li>
-             <Link to='/login_mentors'>Login Mentors</Link>
-            </li>
-            <li>
-              <Link to='/StartPage'>Start Page</Link>
-            </li>
-            <li>
-              <Link to='/Student_Profile_Form'>Student Profile Form</Link>
-            </li> */}
-            {/* <li>
-              <Link to='/contact'>Contact</Link>
-            </li> */}
+             */}
           </ul>
-         <div className="right" style={{ display:'flex',marginRight:'100px', gap:'10px' }}>
-          <button className="Dashboard"> <span style={{fontWeight:'bold', marginTop:'6px'}}>Dashboard </span></button>
-          <button className="Mentor" > <span style={{fontWeight:'bold', marginTop:'6px'}}>Find your mentor </span></button>
+         <div className="right" >
+          <button className="Dashboard font-bold my-2">Dashboard </button>
+          <button className="Mentor font-bold my-2" > Find your mentor</button>
          </div>
           <button className='toggle' onClick={() => setClick(!click)}>
             {click ? <i className='fa fa-times'> </i> : <i className='fa fa-bars'></i>}

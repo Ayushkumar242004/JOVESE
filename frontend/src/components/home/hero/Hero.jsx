@@ -10,7 +10,9 @@ const Hero = () => {
           <div className='row'>
             
             <Heading subtitle='WELCOME TO JOVESE' title='Supercharge your carrier with longterm mentorship' />
-            <p style={{fontSize:'1.5rem', color:'white', marginBottom:'30px'}}>Land your dream job, role, and company faster than ever with 1:1 long term mentorship</p>
+            <div className='text-[#FF0000] text-lg '>
+            <h1>Land your dream job, role, and company faster than ever with 1:1 long term mentorship</h1>
+            </div>
             <button className="SelectMentor">
               Select a Mentor for free trial <i className='fa fa-long-arrow-alt-right'></i>
             </button>
@@ -38,31 +40,27 @@ const Hero = () => {
               </div>
             </div>
           </div>
+          
         </div>
-      </section>
-      <div className='margin'></div>
-
-      {/* Container with 10 buttons */}
-      <div >
-      <div className="button-container " >
-        <div className="up" >
-        <button className="hero-button" style={{marginTop:'70px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Frontend</span></button>
-        <button className="hero-button"  style={{marginTop:'70px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Backend</span></button>
-        <button className="hero-button"  style={{marginTop:'70px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Full Stack</span></button>
-        <button className="hero-button"  style={{marginTop:'70px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Devops</span></button>
-        <button className="hero-button"  style={{marginTop:'70px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Cloud Engineering</span></button>
         
-        </div>
-       <div className="down">
-       <button className="hero-button"  style={{marginTop:'10px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Data Science</span></button>
-       <button className="hero-button"  style={{marginRight:'10px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Data Analyst</span></button>
-        <button className="hero-button"  style={{marginRight:'10px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Product Engineer</span></button>
-        <button className="hero-button" style={{marginRight:'10px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>UI/UX Designer</span></button>
-        <button className="hero-button"  style={{marginRight:'10px',marginRight:'20px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Marketing</span></button>
-       </div>
-       
+      </section>
+      <div className='margin'></div> 
+      <div className="justify-center text-center" style={{marginTop:'10rem'}} >
+          <div>
+            <button className="mx-2 bg-black text-white rounded-lg my-2"><span style={{fontSize:'25px',margin:'10px'}}>Frontend</span></button>
+            <button className="mx-2 bg-black text-white rounded-lg my-2"  ><span style={{fontSize:'25px',margin:'10px'}}>Backend</span></button>
+            <button className="mx-2 bg-black text-white rounded-lg my-2"  ><span style={{fontSize:'25px',margin:'10px'}}>Full Stack</span></button>
+            <button className="mx-2 bg-black text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Devops</span></button>
+            <button className="mx-2 bg-black text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Cloud Engineering</span></button>           
+            <button className="mx-2 bg-black text-white rounded-lg my-2"  ><span style={{fontSize:'25px',margin:'10px'}}>Data Science</span></button>
+            <button className="mx-2 bg-black text-white rounded-lg my-2"  ><span style={{fontSize:'25px',margin:'10px'}}>Data Analyst</span></button>
+            <button className="mx-2 bg-black text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Product Engineer</span></button>
+            <button className="mx-2 bg-black text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>UI/UX Designer</span></button>
+            <button className="mx-2 bg-black text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Marketing</span></button>
+          </div>         
       </div>
-      </div>
+      
+     
     </>
   );
 };

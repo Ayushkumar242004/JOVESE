@@ -19,6 +19,7 @@ import StartPageSignup from "./components/StartPage/StartPAge_Signup";
 import Dashboard from "./components/Dashboard/Dashboard"
 import LogOut from "./components/SignUp/Logout";
 import Chat from "./components/Chat/Chat"
+import Payment from "./components/Payment/Payment"
 function App() {
   return (
     <>
@@ -38,6 +39,7 @@ function App() {
           <Route exact path='/signup' component={SignUp} />
           <Route exact path='/logout' component={LogOut} />
           <Route exact path='/chat' component={Chat} />
+          <Route exact path='/payment' component={Payment} />
           
         </Switch>
         <Footer />

@@ -97,13 +97,13 @@ header ul li a:hover {
 .icon-container {
   margin-right: 10px; /* Add some spacing between the icon and the text */
 }
-.search input{
+/* .search input{
  margin-left: 40px;
   width:400px ;
   height:40px;
   text-align: center;
   border-radius: 50px;
-}
+} */
 .Dashboard{
   
   border-radius: 50px;
@@ -139,7 +139,7 @@ header ul li a:hover {
   background-color: black;
   color:white;
 }
-@media screen and (max-width: 670px){
+/* @media screen and (max-width: 670px){
       .AI{
         margin-top:15px;
         margin-left: -120px;
@@ -148,7 +148,7 @@ header ul li a:hover {
         margin-top: 15px;
         margin-left: -120px;
       }
-}
+} */
 .fa-bolt{
   height: 40px!important;
   width:40px !important;
