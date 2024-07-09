@@ -11,6 +11,7 @@ const app=express()
 
 const cors=require('cors')
 const router=require('./Routes/Route')
+const paymentRouter=require('./Routes/paymentRoute')
 const PORT=5000;
 const Connectmongo=require('./utils/db')
 
@@ -30,7 +31,7 @@ app.use(express.json())
 
 
 app.use('/api/user',router)
-
+app.use('/api/payment',paymentRouter);
 app.use(errormiddleware)
 app.listen(PORT,()=>{
     console.log(`Example app listening on http://localhost:${PORT}`)
