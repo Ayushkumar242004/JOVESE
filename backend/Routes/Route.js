@@ -7,8 +7,9 @@ const signupSchema = require('../validators/validators')
 const authMiddleware=require('../middlewares/auth-validation')
 router.route('/').get(controller.home);
 router.route('/signup').post(validatemiddleware(signupSchema),controller.signup);
-router.route('/userdata').get(controller.userdata)
+router.route('/userdata').get(authMiddleware,controller.userdata)
 router.route('/login').post(controller.login)
 
+router.route('/profileupdate').patch(authMiddleware,controller.profileupdate)
 
 module.exports=router

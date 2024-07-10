@@ -22,33 +22,40 @@ const SignUp = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const response = await fetch('http://localhost:5000/api/user/signup', {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(credentials) //Need to format in string ,
-                //so converts a JavaScript object (credentials in this case) into a JSON string 
-                //JSON=Javascript Object Notation
-            });
 
-            if (response.ok) {
-                const responseData = await response.json();
-                setCredentials({ username: "", email: "", password: "", confirmPassword: "" });
-                toast.success("Registration successful");
-                storeTokenInLS(responseData.token); // Uncomment this to store token
-                window.location.href = '/'; // Uncomment this to navigate after signup
-            } else {
-                const responseError = await response.json();
-                toast.error(responseError.extraDetails ? responseError.extraDetails : responseError.message);
-                if (responseError.message === "You have an account already you can Login instead") {
-                    window.location.href = '/login'; // Uncomment this to navigate to login
+
+        if(credentials.password!==credentials.confirmPassword){
+            toast.error("Password and Confirm Password does not match");
+        }
+        else{
+            try {
+                const response = await fetch('http://localhost:5000/api/user/signup', {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(credentials) //Need to format in string ,
+                    //so converts a JavaScript object (credentials in this case) into a JSON string 
+                    //JSON=Javascript Object Notation
+                });
+    
+                if (response.ok) {
+                    const responseData = await response.json();
+                    setCredentials({ username: "", email: "", password: "", confirmPassword: "" });
+                    toast.success("Registration successful");
+                    storeTokenInLS(responseData.token); // Uncomment this to store token
+                    window.location.href = '/'; // Uncomment this to navigate after signup
+                } else {
+                    const responseError = await response.json();
+                    toast.error(responseError.extraDetails ? responseError.extraDetails : responseError.message);
+                    if (responseError.message === "You have an account already you can Login instead") {
+                        window.location.href = '/login'; // Uncomment this to navigate to login
+                    }
                 }
+            } catch (error) {
+                console.log(error);
+                toast.error("An error occurred during signup.");
             }
-        } catch (error) {
-            console.log(error);
-            toast.error("An error occurred during signup.");
         }
     }
 

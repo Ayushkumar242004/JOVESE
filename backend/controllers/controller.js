@@ -10,7 +10,7 @@ const home=(req,res)=>{
 
 const signup=async (req,res)=>{
     try{
-        const {username,email,password,confirmPassword}=req.body;
+        const {username,email,password}=req.body;
         // if(password.toString()!==confirmPassword.toString()){
         //     res.status(400).json({message:"Confirm password is different from password"})
         // }
@@ -42,7 +42,7 @@ const userdata=(req,res)=>{
         const userData=req.user;
         if(!userData) return res.status(401).json({ message: "Unauthorized HTTP, Token not provided" });
         return res.status(200).json({  userData });  
-    } catch (error) {
+    } catch (error) {userObject
         console.log(`Error form user route ${error}`);
     }
 }
@@ -72,4 +72,20 @@ const login= async (req,res)=>{
         res.status(500).json("Internal server error");
     }
 }
-module.exports={home,signup,userdata,login}
+
+const profileupdate=async(req,res)=>{
+    try {
+        // console.log(req.body);
+        const userid=req.userID;
+        const updateuseredata=req.body;
+
+        const updatedata=await collection.updateOne(
+            {_id:userid},
+            {$set:updateuseredata}
+        )
+        return res.status(200).json({msg:"Lund mera"});
+    } catch (error) {
+        console.log(error);
+    }
+}
+module.exports={home,signup,userdata,login,profileupdate}

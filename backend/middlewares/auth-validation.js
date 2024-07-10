@@ -16,6 +16,7 @@ const authMiddleware = async (req, res, next) => {
         const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
         
         const userData = await userModel.findOne({ email: decoded.email }).select({ password: 0 });
+        console.log(userData);
         if (!userData) {
             return res.status(401).json({ message: "Unauthorized HTTP, User not found" });
         }

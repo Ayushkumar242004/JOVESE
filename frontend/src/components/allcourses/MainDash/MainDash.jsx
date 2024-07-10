@@ -1,11 +1,16 @@
 import React from "react";
 import Cards from "../Cards/Cards";
-import Table from "../Table/Table";
+import Table from "../Table/Table2";
 import "./MainDash.css";
+
+import { useAuth } from "../../store/auth";
+
 const MainDash = () => {
+
+  const {user}=useAuth();
   return (
     <div className="MainDash">
-      <h1>Ayush Kumar</h1>
+      <h1>{user.username}</h1>
       <Cards />
       <Table />
     </div>

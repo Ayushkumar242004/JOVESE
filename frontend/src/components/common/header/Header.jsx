@@ -30,13 +30,13 @@ const Header = () => {
             <li>
               <Link to='/resumeBuilder'>Resume Builder</Link>
             </li>
-            
-            {/* <li>
+{/*             
+             <li>
               <Link to='/loginform_mentors'>LoginForm mentors</Link>
             </li>
             <li>
               <Link to='/chat'>Chat</Link>
-            </li>
+            </li> */}
            
             {isLoggedIn ? (
               <li>
@@ -52,7 +52,7 @@ const Header = () => {
                 </li>
               </>
             )}
-             */}
+             
           </ul>
          <div className="right" >
           <button className="Dashboard font-bold my-2">Dashboard </button>
