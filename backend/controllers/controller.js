@@ -83,7 +83,7 @@ const profileupdate=async(req,res)=>{
             {_id:userid},
             {$set:updateuseredata}
         )
-        return res.status(200).json({msg:"Lund mera"});
+        return res.status(200).json({msg:"Profile Updated Successfully"});
     } catch (error) {
         console.log(error);
     }
