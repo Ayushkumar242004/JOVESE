@@ -91,11 +91,22 @@ export default function BasicTable() {
   };
 
   return (
-    <div className="Table">
+    <div className="Table"  style={{marginTop:'20px'}}>
       <h3>Personal Details</h3>
-      <Button variant="contained" color="primary" onClick={toggleEdit}>
-        {isEditing ? "Save" : "Edit"}
-      </Button>
+      <div style={{display:'flex', justifyContent:'space-between'}}>
+        <div>
+            <Button variant="contained" color="primary" onClick={toggleEdit}>
+              {isEditing ? "Save" : "Edit"}
+            </Button>
+        </div>
+
+        <div>
+        <a href="/loginform_mentors" style={{ color: '#000'}}>
+          Fill complete details
+        </a>
+        </div>
+
+      </div>
       <TableContainer
         component={Paper}
         style={{ boxShadow: "0px 13px 20px 0px #80808029" }}

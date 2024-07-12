@@ -43,46 +43,45 @@ export default function Pricing() {
       </div>
       </div>
       <div className="mainCard" style={{ display: "flex" }}>
-          {/* card 2 */}
-        <div
-          className="top"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            textAlign: "center",
-            margin: "50px",
-          }}
-        >
-          <MDBCard className="custom-card">
-            <MDBCardImage
-              src="https://tse3.mm.bing.net/th?id=OIP.j8yd8dJ5215WbgQ0NsLzuAHaNK&pid=Api&P=0&h=220"
-              alt="..."
-              position="top"
-              className="custom-card-image"
-            />
-            <MDBCardBody className="custom-card-body">
-              <MDBCardTitle>Card title</MDBCardTitle>
-              <div className="tags">
-                <span className="tag">Frontend Developer</span>
-              </div>
-              <MDBCardText>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </MDBCardText>
-              <div className="tags2">
-                <span className="tag2">Amazon</span>
-                <span className="tag2">Facebook</span>
-                <span className="tag2">Oracle</span>
-              </div>
-            </MDBCardBody>
-          </MDBCard>
-        </div>
-
-
-    
-
-      </div>
+  {Array(12).fill(0).map((_, index) => (
+    <div
+      key={index}
+      className="top"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        textAlign: "center",
+        margin: "50px",
+      }}
+      onClick={() => window.location.href = '/demo_lectures'}
+    >
+      <MDBCard className="custom-card">
+        <MDBCardImage
+          src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          alt="..."
+          position="top"
+          className="custom-card-image"
+        />
+        <MDBCardBody className="custom-card-body">
+          <MDBCardTitle>Card title</MDBCardTitle>
+          <div className="tags">
+            <span className="tag">Frontend Developer</span>
+          </div>
+          <MDBCardText>
+            This is a longer card with supporting text below as a natural
+            lead-in to additional content. This content is a little bit
+            longer.
+          </MDBCardText>
+          <div className="tags2">
+            <span className="tag2">Amazon</span>
+            <span className="tag2">Facebook</span>
+            <span className="tag2">Oracle</span>
+          </div>
+        </MDBCardBody>
+      </MDBCard>
+    </div>
+  ))}
+</div>
      
   </>
   );

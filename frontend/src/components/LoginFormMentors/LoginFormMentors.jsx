@@ -7,7 +7,7 @@ import Back from "../common/back/Back";
 const LoginForm = () => {
   return (
     <>
-    <Back title=" Login for Mentors" />
+    <Back title=" Login form" />
     <div className='wrapper' style={{backgroundColor:'black'}}>
       <form action="">
         <h1>Login</h1>

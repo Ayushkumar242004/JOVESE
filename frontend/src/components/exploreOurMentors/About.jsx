@@ -6,7 +6,7 @@ import AboutCard from "./AboutCard"
 const About = () => {
   return (
     <>
-      <Back title='Explore our Mentors' />
+      <Back title='Explore' />
       <div className='margin'></div>
 
       {/* Container with 10 buttons */}

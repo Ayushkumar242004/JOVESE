@@ -553,5 +553,47 @@ export const explore_mentors=[
     description: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
     companies: "Amazon, Facebook, Oracle",
   },
+  {
+    image: "https://tse4.mm.bing.net/th?id=OIP.LtLk-vQkLJGggWTN032pPwHaLH&pid=Api&P=0&h=220",
+    job: "Frontend developer",
+    description: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    companies: "Amazon, Facebook, Oracle",
+  },
+  {
+    image: "https://tse4.mm.bing.net/th?id=OIP.LtLk-vQkLJGggWTN032pPwHaLH&pid=Api&P=0&h=220",
+    job: "Frontend developer",
+    description: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    companies: "Amazon, Facebook, Oracle",
+  },
+  {
+    image: "https://tse4.mm.bing.net/th?id=OIP.LtLk-vQkLJGggWTN032pPwHaLH&pid=Api&P=0&h=220",
+    job: "Frontend developer",
+    description: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    companies: "Amazon, Facebook, Oracle",
+  },
+  {
+    image: "https://tse4.mm.bing.net/th?id=OIP.LtLk-vQkLJGggWTN032pPwHaLH&pid=Api&P=0&h=220",
+    job: "Frontend developer",
+    description: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    companies: "Amazon, Facebook, Oracle",
+  },
+  {
+    image: "https://tse4.mm.bing.net/th?id=OIP.LtLk-vQkLJGggWTN032pPwHaLH&pid=Api&P=0&h=220",
+    job: "Frontend developer",
+    description: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    companies: "Amazon, Facebook, Oracle",
+  },
+  {
+    image: "https://tse4.mm.bing.net/th?id=OIP.LtLk-vQkLJGggWTN032pPwHaLH&pid=Api&P=0&h=220",
+    job: "Frontend developer",
+    description: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    companies: "Amazon, Facebook, Oracle",
+  },
+  {
+    image: "https://tse4.mm.bing.net/th?id=OIP.LtLk-vQkLJGggWTN032pPwHaLH&pid=Api&P=0&h=220",
+    job: "Frontend developer",
+    description: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    companies: "Amazon, Facebook, Oracle",
+  },
 
 ]

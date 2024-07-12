@@ -7,3 +7,10 @@
   max-width: 100%;
   height: auto;
 }
+
+.active {
+  background-color: #007bff; /* blue color */
+  color: #ffffff; /* white text color */
+  border-color: #007bff; /* blue border color */
+  box-shadow: none; /* remove shadow */
+}

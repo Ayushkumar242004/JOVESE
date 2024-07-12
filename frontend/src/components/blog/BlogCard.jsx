@@ -65,13 +65,11 @@ const PrimaryButton = styled.button`
   font-size: 1.25rem;
   border: none;
   border-radius: 2rem;
-  background-color: #0d6efd;
-  color: #fff;
+  background-color: #1EB2A6;
+  color: black;
   cursor: pointer;
 
-  &:hover {
-    background-color: #0b5ed7;
-  }
+  
 `;
 
 const PrimaryButton1 = styled(PrimaryButton)`
@@ -211,9 +209,9 @@ function ResumeBuilder() {
         <Text style={{ marginTop: '20px', marginBottom: '20px' }}>
           This is a custom jumbotron featuring an SVG image at the top, some longer text that wraps early thanks to a responsive <code>.col-*</code> class, and a customized call to action.
         </Text>
-        <ButtonWrapper>
-          <PrimaryButton>Choose the template</PrimaryButton>
-        </ButtonWrapper>
+        <PrimaryButton as="a" href="https://www.canva.com/resumes/templates/" target="_blank" style={{textDecoration:'none'}}>
+            <h4>Choose the template</h4>
+        </PrimaryButton>
       </Jumbotron>
       <div className="container2" style={{}}>
       <div className="container3" style={{}}>

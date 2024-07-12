@@ -156,12 +156,12 @@ const Team = () => {
       <div class="bg-white py-24 sm:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl sm:text-center">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Simple no-tricks pricing</h2>
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Buy the Course</h2>
       <p class="mt-6 text-lg leading-8 text-gray-600">Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas in. Explicabo id ut laborum.</p>
     </div>
     <div class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
       <div class="p-8 sm:p-10 lg:flex-auto">
-        <h3 class="text-2xl font-bold tracking-tight text-gray-900">Lifetime membership</h3>
+        <h3 class="text-2xl font-bold tracking-tight text-gray-900">2 year membership</h3>
         <p class="mt-6 text-base leading-7 text-gray-600">Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque amet indis perferendis blanditiis repellendus etur quidem assumenda.</p>
         <div class="mt-10 flex items-center gap-x-4">
           <h4 class="flex-none text-sm font-semibold leading-6 text-indigo-600">What’s included</h4>
@@ -230,24 +230,78 @@ const Team = () => {
         Pick a Time
       </h2>
       <div className="flex justify-around mt-2 mb-5">
-        <span className="inline-flex items-center rounded-md bg-black px-10 py-3 text-s font-medium text-white shadow-md hover:bg-gray-900 transition duration-300">
-          20 May
-        </span>
-        <span className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300">
-          21 May
-        </span>
-        <span className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300">
-          22 May
-        </span>
-        <span className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300">
-          23 May
-        </span>
-        <span className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300">
-          24 May
-        </span>
-        <span className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300">
-          25 May
-        </span>
+  <button
+    className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
+    onClick={(e) => {
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach((button) => button.classList.remove('active'));
+      e.target.classList.add('active');
+    }}
+  >
+    20 May
+  </button>
+  <button
+    className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
+    onClick={(e) => {
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach((button) => button.classList.remove('active'));
+      e.target.classList.add('active');
+    }}
+  >
+    21 May
+  </button>
+  <button
+    className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
+    onClick={(e) => {
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach((button) => button.classList.remove('active'));
+      e.target.classList.add('active');
+    }}
+  >
+    22 May
+  </button>
+  <button
+    className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
+    onClick={(e) => {
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach((button) => button.classList.remove('active'));
+      e.target.classList.add('active');
+    }}
+  >
+    23 May
+  </button>
+  <button
+    className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
+    onClick={(e) => {
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach((button) => button.classList.remove('active'));
+      e.target.classList.add('active');
+    }}
+  >
+    24 May
+  </button>
+  <button
+    className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
+    onClick={(e) => {
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach((button) => button.classList.remove('active'));
+      e.target.classList.add('active');
+    }}
+  >
+    25 May
+  </button>
+</div>
+
+
+      <div style={{display:'flex',justifyContent:'center'}}>
+      <button
+        class="bg-green-500 hover:bg-green-700 active:bg-green-900 text-white font-bold py-2 px-4 rounded-md shadow-md hover:shadow-lg active:shadow-none transition duration-300 ease-in-out"
+      onClick={()=>{
+        alert('Your slot has been booked!.')
+      }}
+      >
+        Book now
+      </button>
       </div>
     </>
   );

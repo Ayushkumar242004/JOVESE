@@ -45,7 +45,7 @@ const Hero = () => {
         
       </section>
       <div className='margin'></div> 
-      <div className="justify-center text-center" style={{marginTop:'10rem'}} >
+      <div className="justify-center text-center" style={{marginTop:'40rem'}} >
           <div>
             <button className="mx-2 bg-black text-white rounded-lg my-2"><span style={{fontSize:'25px',margin:'10px'}}>Frontend</span></button>
             <button className="mx-2 bg-black text-white rounded-lg my-2"  ><span style={{fontSize:'25px',margin:'10px'}}>Backend</span></button>

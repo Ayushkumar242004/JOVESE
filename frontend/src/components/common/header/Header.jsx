@@ -55,8 +55,13 @@ const Header = () => {
              
           </ul>
          <div className="right" >
-          <button className="Dashboard font-bold my-2">Dashboard </button>
+         <Link to="/dashboard" style={{textDecoration:'none'}}>
+            <button className="Dashboard font-bold my-2">Dashboard</button>
+         </Link>
+
+         <Link to="/explore_mentors" style={{textDecoration:'none'}}>
           <button className="Mentor font-bold my-2" > Find your mentor</button>
+          </Link>
          </div>
           <button className='toggle' onClick={() => setClick(!click)}>
             {click ? <i className='fa fa-times'> </i> : <i className='fa fa-bars'></i>}
