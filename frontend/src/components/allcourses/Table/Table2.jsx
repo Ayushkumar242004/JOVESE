@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -31,7 +31,8 @@ const makeStyle = (status) => {
 };
 
 export default function BasicTable() {
-  const { user ,token} = useAuth();
+  const { user,token} = useAuth();
+  // const [user, setUser] = useState([])
 
   const userFields = [
     { label: "First Name", value: user.firstname },
@@ -54,6 +55,30 @@ export default function BasicTable() {
     updatedRows[index].value = value;
     setRows(updatedRows);
   };
+
+  const userAuthenticte=async()=>{
+    try {
+        const response=await fetch('http://localhost:5000/api/user/userdata',{
+          method:"GET",
+          headers:{
+            'Authorization':`Bearer ${token}`
+          }
+        })
+        
+        if(response.ok){
+            const data=await response.json();
+            console.log("auth ",data.userData);
+            // setUser(data.userdata);
+          }else {
+            console.error("Error fetching user data");
+          }
+    } catch (error) {
+        console.log(error);
+    }
+  }
+  useEffect(() => {
+    userAuthenticte();
+  }, []);
 
   const toggleEdit = async (e) => {
     e.preventDefault();
