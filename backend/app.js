@@ -1,12 +1,8 @@
-<<<<<<< HEAD
 require('dotenv').config()
 const axios=require('axios')
 const Razorpay = require("razorpay");
 const jwt=require('jsonwebtoken')
 const crypto = require("crypto");
-const token=process.env.TOKEN
-=======
->>>>>>> b007971f1eabef5868e8967cbe47d04cf28a4b76
 const express =require('express');
 const app=express()
 const cors=require('cors')
@@ -29,7 +25,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/user',router)
-<<<<<<< HEAD
 
 app.post("/api/user/order", async (req, res) => {
   try {
@@ -72,16 +67,6 @@ app.post("/api/user/order/validate", async (req, res) => {
 });
 
 app.use(errormiddleware)
-=======
-app.use('/api/payment',paymentRouter);
-app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
-});
->>>>>>> b007971f1eabef5868e8967cbe47d04cf28a4b76
 app.listen(PORT,()=>{
     console.log(` App listening on http://localhost:${PORT}`)
 })
