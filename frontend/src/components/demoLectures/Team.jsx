@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import Back from "../common/back/Back";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -23,7 +24,80 @@ const features = [
   },
 ];
 
+//payment handler
+
 const Team = () => {
+  const amount = 100000;
+  const currency = "INR";
+  const receiptId = "qwsaq1";
+
+  const paymentHandler = async (e) => {
+    const response = await fetch("http://localhost:5000/api/user/order", {
+      method: "POST",
+      body: JSON.stringify({
+        amount,
+        currency,
+        receipt: receiptId,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const order = await response.json();
+    console.log(order);
+
+    var options = {
+      key: "rzp_test_Bnzoa0XUygJdVJ", // Enter the Key ID generated from the Dashboard
+      amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      currency,
+      name: "Acme Corp", //your business name
+      description: "Test Transaction",
+      image: "https://example.com/your_logo",
+      order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      handler: async function (response) {
+        const body = {
+          ...response,
+        };
+
+        const validateRes = await fetch(
+          "http://localhost:5000/api/user/order/validate",
+          {
+            method: "POST",
+            body: JSON.stringify(body),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        const jsonRes = await validateRes.json();
+        console.log(jsonRes);
+      },
+      prefill: {
+        //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
+        name: "Web Dev Matrix", //your customer's name
+        email: "webdevmatrix@example.com",
+        contact: "9000000000", //Provide the customer's phone number for better conversion rates
+      },
+      notes: {
+        address: "Razorpay Corporate Office",
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+    var rzp1 = new window.Razorpay(options);
+    rzp1.on("payment.failed", function (response) {
+      alert(response.error.code);
+      alert(response.error.description);
+      alert(response.error.source);
+      alert(response.error.step);
+      alert(response.error.reason);
+      alert(response.error.metadata.order_id);
+      alert(response.error.metadata.payment_id);
+    });
+    rzp1.open();
+    e.preventDefault();
+  };
   return (
     <>
       <Back title="Demo Lectures" />
@@ -141,79 +215,150 @@ const Team = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
-
-
-
-
-
-            
             </div>
           </div>
         </div>
       </div>
 
       <div>
-      <div class="bg-white py-24 sm:py-32">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl sm:text-center">
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Buy the Course</h2>
-      <p class="mt-6 text-lg leading-8 text-gray-600">Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas in. Explicabo id ut laborum.</p>
-    </div>
-    <div class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
-      <div class="p-8 sm:p-10 lg:flex-auto">
-        <h3 class="text-2xl font-bold tracking-tight text-gray-900">2 year membership</h3>
-        <p class="mt-6 text-base leading-7 text-gray-600">Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque amet indis perferendis blanditiis repellendus etur quidem assumenda.</p>
-        <div class="mt-10 flex items-center gap-x-4">
-          <h4 class="flex-none text-sm font-semibold leading-6 text-indigo-600">What’s included</h4>
-          <div class="h-px flex-auto bg-gray-100"></div>
-        </div>
-        <ul role="list" class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6">
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Private forum access
-          </li>
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Member resources
-          </li>
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Entry to annual conference
-          </li>
-          <li class="flex gap-x-3">
-            <svg class="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Official member t-shirt
-          </li>
-        </ul>
-      </div>
-      <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-        <div class="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
-          <div class="mx-auto max-w-xs px-8">
-            <p class="text-base font-semibold text-gray-600">Pay once, own it forever</p>
-            <p class="mt-6 flex items-baseline justify-center gap-x-2">
-              <span class="text-5xl font-bold tracking-tight text-gray-900">$349</span>
-              <span class="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
-            </p>
-            <a href="http://localhost:3000/payment" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
-            <p class="mt-6 text-xs leading-5 text-gray-600">Invoices and receipts available for easy company reimbursement</p>
+        <div class="bg-white py-24 sm:py-32">
+          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl sm:text-center">
+              <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Buy the Course
+              </h2>
+              <p class="mt-6 text-lg leading-8 text-gray-600">
+                Distinctio et nulla eum soluta et neque labore quibusdam. Saepe
+                et quasi iusto modi velit ut non voluptas in. Explicabo id ut
+                laborum.
+              </p>
+            </div>
+            <div class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+              <div class="p-8 sm:p-10 lg:flex-auto">
+                <h3 class="text-2xl font-bold tracking-tight text-gray-900">
+                  2 year membership
+                </h3>
+                <p class="mt-6 text-base leading-7 text-gray-600">
+                  Lorem ipsum dolor sit amet consect etur adipisicing elit.
+                  Itaque amet indis perferendis blanditiis repellendus etur
+                  quidem assumenda.
+                </p>
+                <div class="mt-10 flex items-center gap-x-4">
+                  <h4 class="flex-none text-sm font-semibold leading-6 text-indigo-600">
+                    What’s included
+                  </h4>
+                  <div class="h-px flex-auto bg-gray-100"></div>
+                </div>
+                <ul
+                  role="list"
+                  class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
+                >
+                  <li class="flex gap-x-3">
+                    <svg
+                      class="h-6 w-5 flex-none text-indigo-600"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Private forum access
+                  </li>
+                  <li class="flex gap-x-3">
+                    <svg
+                      class="h-6 w-5 flex-none text-indigo-600"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Member resources
+                  </li>
+                  <li class="flex gap-x-3">
+                    <svg
+                      class="h-6 w-5 flex-none text-indigo-600"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Entry to annual conference
+                  </li>
+                  <li class="flex gap-x-3">
+                    <svg
+                      class="h-6 w-5 flex-none text-indigo-600"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Official member t-shirt
+                  </li>
+                </ul>
+              </div>
+              <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
+                <div class="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
+                  <div class="mx-auto max-w-xs px-8">
+                    <p class="text-base font-semibold text-gray-600">
+                      Pay once, own it forever
+                    </p>
+                    <p class="mt-6 flex items-baseline justify-center gap-x-2">
+                      <span class="text-5xl font-bold tracking-tight text-gray-900">
+                        ₹1000
+                      </span>
+                      <span class="text-sm font-semibold leading-6 tracking-wide text-gray-600">
+                        INR
+                      </span>
+                    </p>
+                    <button
+                      onClick={paymentHandler}
+                      class="mt-10 block w-full rounded-md bg-indigo-600 
+            px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 
+            focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                      Get access
+                    </button>
+
+                    <div>
+                      <Link to="/chat" 
+                        class="mt-2 block w-full rounded-md bg-indigo-600 
+            px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 
+            focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      >
+                        Chat with Mentor
+                      </Link>
+                    </div>
+
+                    <p class="mt-6 text-xs leading-5 text-gray-600">
+                      Invoices and receipts available for easy company
+                      reimbursement
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-      </div>
-
-
 
       <div className="bg-white border  mt-5 px-6 py-12">
         <h2 className="text-3xl font-bold tracking-tight text-white text-center bg-black rounded-lg py-4 px-6 animate-fade-in mb-6">
@@ -230,78 +375,77 @@ const Team = () => {
         Pick a Time
       </h2>
       <div className="flex justify-around mt-2 mb-5">
-  <button
-    className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
-    onClick={(e) => {
-      const buttons = document.querySelectorAll('button');
-      buttons.forEach((button) => button.classList.remove('active'));
-      e.target.classList.add('active');
-    }}
-  >
-    20 May
-  </button>
-  <button
-    className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
-    onClick={(e) => {
-      const buttons = document.querySelectorAll('button');
-      buttons.forEach((button) => button.classList.remove('active'));
-      e.target.classList.add('active');
-    }}
-  >
-    21 May
-  </button>
-  <button
-    className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
-    onClick={(e) => {
-      const buttons = document.querySelectorAll('button');
-      buttons.forEach((button) => button.classList.remove('active'));
-      e.target.classList.add('active');
-    }}
-  >
-    22 May
-  </button>
-  <button
-    className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
-    onClick={(e) => {
-      const buttons = document.querySelectorAll('button');
-      buttons.forEach((button) => button.classList.remove('active'));
-      e.target.classList.add('active');
-    }}
-  >
-    23 May
-  </button>
-  <button
-    className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
-    onClick={(e) => {
-      const buttons = document.querySelectorAll('button');
-      buttons.forEach((button) => button.classList.remove('active'));
-      e.target.classList.add('active');
-    }}
-  >
-    24 May
-  </button>
-  <button
-    className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
-    onClick={(e) => {
-      const buttons = document.querySelectorAll('button');
-      buttons.forEach((button) => button.classList.remove('active'));
-      e.target.classList.add('active');
-    }}
-  >
-    25 May
-  </button>
-</div>
+        <button
+          className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
+          onClick={(e) => {
+            const buttons = document.querySelectorAll("button");
+            buttons.forEach((button) => button.classList.remove("active"));
+            e.target.classList.add("active");
+          }}
+        >
+          20 May
+        </button>
+        <button
+          className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
+          onClick={(e) => {
+            const buttons = document.querySelectorAll("button");
+            buttons.forEach((button) => button.classList.remove("active"));
+            e.target.classList.add("active");
+          }}
+        >
+          21 May
+        </button>
+        <button
+          className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
+          onClick={(e) => {
+            const buttons = document.querySelectorAll("button");
+            buttons.forEach((button) => button.classList.remove("active"));
+            e.target.classList.add("active");
+          }}
+        >
+          22 May
+        </button>
+        <button
+          className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
+          onClick={(e) => {
+            const buttons = document.querySelectorAll("button");
+            buttons.forEach((button) => button.classList.remove("active"));
+            e.target.classList.add("active");
+          }}
+        >
+          23 May
+        </button>
+        <button
+          className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
+          onClick={(e) => {
+            const buttons = document.querySelectorAll("button");
+            buttons.forEach((button) => button.classList.remove("active"));
+            e.target.classList.add("active");
+          }}
+        >
+          24 May
+        </button>
+        <button
+          className="inline-flex items-center rounded-md bg-black px-10 py-3 text-xs font-medium text-white shadow-md hover:bg-gray-900 transition duration-300"
+          onClick={(e) => {
+            const buttons = document.querySelectorAll("button");
+            buttons.forEach((button) => button.classList.remove("active"));
+            e.target.classList.add("active");
+          }}
+        >
+          25 May
+        </button>
+      </div>
 
-
-      <div style={{display:'flex',justifyContent:'center'}}>
-      <button
-        class="bg-green-500 hover:bg-green-700 active:bg-green-900 text-white font-bold py-2 px-4 rounded-md shadow-md hover:shadow-lg active:shadow-none transition duration-300 ease-in-out"
-      onClick={()=>{
-        alert('Your slot has been booked!.')
-      }}
-      >
-        Book now
-      </button>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <button
+          class="mb-4 bg-green-500 hover:bg-green-700 active:bg-green-900 text-lg text-white font-bold py-2 px-4 rounded-md shadow-md hover:shadow-lg active:shadow-none transition duration-300 ease-in-out"
+          onClick={() => {
+            alert("Your slot has been booked!.");
+          }}
+        >
+          Book now
+        </button>
       </div>
     </>
   );
