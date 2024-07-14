@@ -1,4 +1,5 @@
 require('dotenv').config()
+
 const axios=require('axios')
 const Razorpay = require("razorpay");
 const jwt=require('jsonwebtoken')
@@ -10,7 +11,7 @@ const router=require('./Routes/Route')
 const PORT=5000;
 const Connectmongo=require('./utils/db')
 
-// const errormiddleware=require('./middlewares/errorMiddleware')
+const errormiddleware=require('./middlewares/errorMiddleware')
 Connectmongo();
 
 var corsOptions = {
