@@ -22,24 +22,23 @@ export default function Pricing() {
       <Back title="Explore mentors" />
 
       <div>
-      <div className="button-container " >
-       
-        <button className="hero-button"   style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Frontend</span></button>
-        <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Backend</span></button>
-        <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Full Stack</span></button>
-        <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Devops</span></button>
-        <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Cloud Engineering</span></button>       
-        <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Data Science</span></button>
-        <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Data Analyst</span></button>
-        <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Product Engineer</span></button>
-        <button className="hero-button" style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>UI/UX Designer</span></button>
-        <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Marketing</span></button>
-        <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Full Stack</span></button>
-        <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Devops</span></button>
-        <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Cloud Engineering</span></button>       
-       <button className="hero-button"  style={{margin:'10px',backgroundColor:'black', color:'white',borderRadius:'10px'}}><span style={{fontSize:'25px',margin:'10px'}}>Data Science</span></button>
-       
-       
+      <div className="justify-center text-center" >
+          <div>
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2"><span style={{fontSize:'25px',margin:'10px'}}>Frontend</span></button>
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2"  ><span style={{fontSize:'25px',margin:'10px'}}>Backend</span></button>
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2"  ><span style={{fontSize:'25px',margin:'10px'}}>Full Stack</span></button>
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Devops</span></button>
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Cloud Engineering</span></button>           
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2"  ><span style={{fontSize:'25px',margin:'10px'}}>Data Science</span></button>
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2"  ><span style={{fontSize:'25px',margin:'10px'}}>Data Analyst</span></button>
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Product Engineer</span></button>
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>UI/UX Designer</span></button>
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Artificial Intelligence/Machine Learning</span></button>
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Cybersecurity</span></button>
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Network Architecture</span></button>
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Project Management</span></button>
+            <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Business Analyst</span></button>
+          </div>         
       </div>
       </div>
       <div className="mainCard" style={{ display: "flex" }}>
