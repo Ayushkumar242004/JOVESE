@@ -1,88 +1,274 @@
-import * as React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import "./Table.css";
+import React, { useState, useEffect } from "react";
+import "./Table2.css";
+import { useAuth } from "../../store/auth";
 
-function createData(name, trackingId, date, status) {
-  return { name, trackingId, date, status };
-}
+const countries = ["USA", "Canada", "UK", "Australia", "Germany", "India", "Japan"]; // Example list of countries
+const genders = ["Male", "Female", "Other"]; // Example list of genders
 
-const rows = [
-  createData("First Name", "Ayush", "Last Name", "kumar"),
-  createData("Profile link", "xyz.com", "Username", "janesmith"),
-  createData("Gender", "Male", "Email", "ayu@gmail.com"),
-  createData("Country", "India", "Work experiences", "2 years"),
-  createData("LinkedIn", "abclinkedin.com", "Twitter", "xyztwitter.com"),
-];
+const UserDashboard = () => {
+  const { token } = useAuth();
 
+  const [user, setUser] = useState({
+    firstname: "",
+    lastname: "",
+    username: "",
+    gender: "",
+    country: "",
+    workExperiences: "",
+    profileLink: "",
+    github: "",
+    linkedIn: "",
+    twitter: "",
+  });
 
-const makeStyle=(status)=>{
-  if(status === 'Approved')
-  {
-    return {
-      background: 'rgb(145 254 159 / 47%)',
-      color: 'green',
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    username: "",
+    gender: "",
+    country: "",
+    workExperiences: "",
+    profileLink: "",
+    github: "",
+    linkedIn: "",
+    twitter: "",
+  });
+
+  const [isEditing, setIsEditing] = useState(false);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/user/getuserdata", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setUser(data.userData);
+          setFormData({
+            firstname: data.userData.firstname,
+            lastname: data.userData.lastname,
+            username: data.userData.username,
+            gender: data.userData.gender,
+            country: data.userData.country,
+            workExperiences: data.userData.workExperiences,
+            profileLink: data.userData.profileLink,
+            github: data.userData.github,
+            linkedIn: data.userData.linkedIn,
+            twitter: data.userData.twitter,
+          });
+        } else {
+          console.error("Error fetching user data");
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUserData();
+  }, [token]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSave = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/user/profileupdate", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        setUser({
+          firstname: formData.firstname,
+          lastname: formData.lastname,
+          username: formData.username,
+          gender: formData.gender,
+          country: formData.country,
+          workExperiences: formData.workExperiences,
+          profileLink: formData.profileLink,
+          github: formData.github,
+          linkedIn: formData.linkedIn,
+          twitter: formData.twitter,
+        });
+        setIsEditing(false);
+      } else {
+        console.error("Error updating user data");
+      }
+    } catch (error) {
+      console.error("Error updating user data:", error);
     }
-  }
-  else if(status === 'Pending')
-  {
-    return{
-      background: '#ffadad8f',
-      color: 'red',
-    }
-  }
-  else{
-    return{
-      background: 'grey',
-      color: 'white',
-    }
-  }
-}
+  };
 
-export default function BasicTable() {
   return (
-      <div className="Table">
-      <h3>Personal Details</h3>
-      
-        <TableContainer
-          component={Paper}
-          style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
-        >
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            {/* <TableHead>
-              <TableRow>
-                <TableCell>Names</TableCell>
-                <TableCell align="left">Refferal ID</TableCell>
-                <TableCell align="left">Date</TableCell>
-                <TableCell align="left">Status</TableCell>
-                <TableCell align="left"></TableCell>
-              </TableRow>
-            </TableHead> */}
-            <TableBody style={{ color: "white" }}>
-              {rows.map((row) => (
-                <TableRow
-                  key={row.name}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                >
-                  <TableCell component="th" scope="row" style={makeStyle(row.name)}>
-                    {row.name}
-                  </TableCell>
-                  <TableCell align="left">{row.trackingId}</TableCell>
-                  <TableCell align="left"style={makeStyle(row.date)} >{row.date}</TableCell>
-                  <TableCell align="left">
-                    <span className="status" >{row.status}</span>
-                  </TableCell>
-                  {/* <TableCell align="left" className="Details">Details</TableCell> */}
-                </TableRow>
+    <div className="user-dashboard">
+      <h1>User Dashboard</h1>
+      <form>
+        <div className="user-info">
+          <label>First Name</label>
+          {isEditing ? (
+            <input
+              type="text"
+              name="firstname"
+              value={formData.firstname}
+              onChange={handleChange}
+            />
+          ) : (
+            <p>{user.firstname}</p>
+          )}
+        </div>
+        <div className="user-info">
+          <label>Last Name</label>
+          {isEditing ? (
+            <input
+              type="text"
+              name="lastname"
+              value={formData.lastname}
+              onChange={handleChange}
+            />
+          ) : (
+            <p>{user.lastname}</p>
+          )}
+        </div>
+        <div className="user-info">
+          <label>Username</label>
+          {isEditing ? (
+            <input
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+            />
+          ) : (
+            <p>{user.username}</p>
+          )}
+        </div>
+        <div className="user-info">
+          <label>Gender</label>
+          {isEditing ? (
+            <select
+              name="gender"
+              value={formData.gender}
+              onChange={handleChange}
+            >
+              <option value="">Select Gender</option>
+              {genders.map((gender) => (
+                <option key={gender} value={gender}>
+                  {gender}
+                </option>
               ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+            </select>
+          ) : (
+            <p>{user.gender}</p>
+          )}
+        </div>
+        <div className="user-info">
+          <label>Country</label>
+          {isEditing ? (
+            <select
+              name="country"
+              value={formData.country}
+              onChange={handleChange}
+            >
+              <option value="">Select Country</option>
+              {countries.map((country) => (
+                <option key={country} value={country}>
+                  {country}
+                </option>
+              ))}
+            </select>
+          ) : (
+            <p>{user.country}</p>
+          )}
+        </div>
+        <div className="user-info">
+          <label>Work Experiences</label>
+          {isEditing ? (
+            <textarea
+              name="workExperiences"
+              value={formData.workExperiences}
+              onChange={handleChange}
+            />
+          ) : (
+            <p>{user.workExperiences}</p>
+          )}
+        </div>
+        <div className="user-info">
+          <label>Profile Link</label>
+          {isEditing ? (
+            <input
+              type="text"
+              name="profileLink"
+              value={formData.profileLink}
+              onChange={handleChange}
+            />
+          ) : (
+            <p>{user.profileLink}</p>
+          )}
+        </div>
+        <div className="user-info">
+          <label>Github</label>
+          {isEditing ? (
+            <input
+              type="text"
+              name="github"
+              value={formData.github}
+              onChange={handleChange}
+            />
+          ) : (
+            <p>{user.github}</p>
+          )}
+        </div>
+        <div className="user-info">
+          <label>LinkedIn</label>
+          {isEditing ? (
+            <input
+              type="text"
+              name="linkedIn"
+              value={formData.linkedIn}
+              onChange={handleChange}
+            />
+          ) : (
+            <p>{user.linkedIn}</p>
+          )}
+        </div>
+        <div className="user-info">
+          <label>Twitter</label>
+          {isEditing ? (
+            <input
+              type="text"
+              name="twitter"
+              value={formData.twitter}
+              onChange={handleChange}
+            />
+          ) : (
+            <p>{user.twitter}</p>
+          )}
+        </div>
+      </form>
+      <div className="buttons">
+        {isEditing ? (
+          <>
+            <button onClick={handleSave}>Save</button>
+            <button onClick={() => setIsEditing(false)}>Cancel</button>
+          </>
+        ) : (
+          <button onClick={() => setIsEditing(true)}>Edit</button>
+        )}
       </div>
+    </div>
   );
-}
+};
+
+export default UserDashboard;

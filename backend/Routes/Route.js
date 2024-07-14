@@ -10,7 +10,6 @@ router.route('/signup').post(validatemiddleware(signupSchema),controller.signup)
 router.route('/userdata').get(authMiddleware,controller.userdata)
 router.route('/login').post(controller.login)
 
-router.route('/profileupdate').patch(controller.profileupdate)
-// router.route('/getuserdata').get(controller.userdata)
-
+router.route('/profileupdate').patch(authMiddleware,controller.profileupdate)
+router.route('/getuserdata').get(authMiddleware,controller.userdata)
 module.exports=router

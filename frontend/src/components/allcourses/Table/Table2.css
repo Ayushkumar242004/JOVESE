@@ -1,0 +1,65 @@
+.user-dashboard {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .user-dashboard h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .user-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .user-info label {
+    font-weight: bold;
+    margin-right: 10px;
+    text-transform: capitalize;
+  }
+  
+  .user-info p {
+    margin: 0;
+  }
+  
+  .user-info input {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buttons button:first-of-type {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .buttons button:last-of-type {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .buttons button:hover {
+    opacity: 0.9;
+  }
+  

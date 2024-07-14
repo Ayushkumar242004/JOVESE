@@ -12,14 +12,14 @@ const authMiddleware = async (req, res, next) => {
     // console.log('Received token:', token); // Log the token for debugging
 
     if (!token || token === 'null' || token === 'undefined') {
-      console.log('Received token:', token);
+      // console.log('Received token:', token);
       return res.status(401).json({ message: "Unauthorized HTTP, Invalid token" });
   }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
 
     const userData = await userModel.findOne({ email: decoded.email }).select({ password: 0 });
-    console.log('User Data:', userData);
+    // console.log('User Data:', userData);
 
     if (!userData) {
       return res.status(401).json({ message: "Unauthorized HTTP, User not found" });
