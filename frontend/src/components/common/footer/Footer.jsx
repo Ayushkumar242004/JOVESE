@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'react-router-dom';
 import { blog } from "../../../dummydata"
 import "./footer.css"
 
@@ -8,7 +9,7 @@ const Footer = () => {
       
       <footer >
           <div className='box logo' style={{display:'flex ',flexDirection:'column'}} >
-            <h1>JOVESE</h1>
+            <h1 style={{color:'red', fontStyle:'italic'}}>JOVESE</h1>
             <span>ONLINE EDUCATION & LEARNING</span>
             <div style={{diplay:'flex'}}>
             <i  style={{padding:'8px'}}className='fab fa-facebook-f icon'></i>
@@ -22,12 +23,11 @@ const Footer = () => {
             <h3 >Explore</h3>
             
             <ul >
-              <li>Resume Builder</li>
-              <li>Pro plan</li>
-              <li>Blog</li>
-              <li>How it works</li>
-              <li>Explore Mentors</li>
-              <li>Live webinars</li>
+              <li ><Link to="/resumeBuilder" style={{ textDecoration: 'none', color: 'inherit' }}>Resume Builder</Link></li>
+              <li><Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Blog</Link></li>
+              <li><Link to="/dashboard" style={{ textDecoration: 'none', color: 'inherit' }}>How it works?</Link></li>
+              <li><Link to="/explore_mentors" style={{ textDecoration: 'none', color: 'inherit' }}>Explore Mentors</Link></li>
+              <li><Link to="/demo_lectures" style={{ textDecoration: 'none', color: 'inherit' }}>Demo Lecture</Link></li>
             </ul>
            
           </div>
