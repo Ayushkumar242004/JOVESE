@@ -8,19 +8,20 @@ const AboutHome = () => {
   return (
     <>
       <section className='aboutHome'>
-        <div className='container flexSB' style={{marginTop:'40rem'}}>
-         
+        <div className='container flexSB'>
           <div className='left row'>
             <img src='./images/about.webp' alt='' />
           </div>
           <div className='right row'>
             <Heading subtitle='LEARN ANYTHING' title='Benefits About Online Learning Expertise' />
-            <div className='items' >
+            <div className='items'>
               {homeAbout.map((val) => {
                 return (
-                  <div className='item flexSB' style={{display:'flex !important', flexDirection:'row !important', justifyContent:'space-between'}}>
-                   
-                    <div className='text1'>
+                  <div className='item flexSB'>
+                    <div className='img'>
+                      <img src={val.cover} alt='' />
+                    </div>
+                    <div className='text'>
                       <h2>{val.title}</h2>
                       <p>{val.desc}</p>
                     </div>
