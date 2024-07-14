@@ -29,7 +29,7 @@ const signup=async (req,res)=>{
         res.status(201).json({
             msg: "Registration succssful",
             token: await userCreated.generateToken(),
-            userId: userCreated.toString(),
+            userId: userCreated._id.toString(),
         });
 
 
@@ -39,9 +39,22 @@ const signup=async (req,res)=>{
 }
 const userdata=(req,res)=>{
     try {
+
+        // const authHeader = req.header('Authorization');
+        // console.log(authHeader);
+
+        // if (!authHeader) {
+        //     return res.status(401).json({ message: "Unauthorized HTTP, Token not provided" });
+        // }
+
+        // const token = authHeader.split(' ')[1];
+        // if (!token || token === 'null' || token === 'undefined') {
+        //     console.log('Received token:', token);
+        //     return res.status(401).json({ message: "Unauthorized HTTP, Invalid token" });
+        // }
         const userData=req.user;
         if(!userData) return res.status(401).json({ message: "Unauthorized HTTP, Token not provided" });
-        return res.status(200).json({  userData });  
+        return res.status(200).json({ userData });  
     } catch (error) {userObject
         console.log(`Error form user route ${error}`);
     }

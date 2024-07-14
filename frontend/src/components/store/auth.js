@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
           headers:{
             'Authorization':`Bearer ${token}`
           }
-        })
+        });
         
         if(response.ok){
             const data=await response.json();
@@ -32,8 +32,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     userAuthenticte();
   }, []);
-  // localStorage.clear();
-  //function to stored the token in local storage
+ 
   
   const storeTokenInLS = (serverToken) => {
     setToken(serverToken);
