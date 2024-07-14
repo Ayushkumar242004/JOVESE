@@ -154,9 +154,8 @@ const ResponsiveFlexContainer = styled.div`
   width: 100%;
 
   @media (max-width: 1200px) {
-    margin-top:15rem;
-    flex: 1 1 45%; /* Grow to 45% of the container on medium screens */
-    max-width: 45%;
+    margin-top:8rem;
+    
     
   }
 

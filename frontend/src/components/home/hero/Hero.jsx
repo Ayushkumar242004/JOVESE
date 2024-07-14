@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import Heading from "../../common/heading/Heading";
 import "./Hero.css";
 
@@ -13,9 +14,11 @@ const Hero = () => {
             <div className='text-[#FF0000] text-lg '>
             <h1>Land your dream job, role, and company faster than ever with 1:1 long term mentorship</h1>
             </div>
-            <button className="SelectMentor">
-              Select a Mentor for free trial <i className='fa fa-long-arrow-alt-right'></i>
-            </button>
+            
+            <Link to="/explore_mentors" className="SelectMentor" style={{ textDecoration: 'none' , display:'flex', justifyContent:'center'}}>
+              <span >Select a Mentor for free trial </span>
+            </Link>
+
             <div className='button'>
               <div className="together">
                 <input
@@ -56,7 +59,11 @@ const Hero = () => {
             <button className="mx-2 bg-black text-white rounded-lg my-2"  ><span style={{fontSize:'25px',margin:'10px'}}>Data Analyst</span></button>
             <button className="mx-2 bg-black text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Product Engineer</span></button>
             <button className="mx-2 bg-black text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>UI/UX Designer</span></button>
-            <button className="mx-2 bg-black text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Marketing</span></button>
+            <button className="mx-2 bg-black text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Artificial Intelligence/Machine Learning</span></button>
+            <button className="mx-2 bg-black text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Cybersecurity</span></button>
+            <button className="mx-2 bg-black text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Network Architecture</span></button>
+            <button className="mx-2 bg-black text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Project Management</span></button>
+            <button className="mx-2 bg-black text-white rounded-lg my-2" ><span style={{fontSize:'25px',margin:'10px'}}>Business Analyst</span></button>
           </div>         
       </div>
       

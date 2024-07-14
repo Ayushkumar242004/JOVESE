@@ -18,7 +18,7 @@ const AboutHome = () => {
             <div className='items' >
               {homeAbout.map((val) => {
                 return (
-                  <div className='item flexSB' style={{display:'flex !important',flexDirection:'row', justifyContent:'space-between'}}>
+                  <div className='item flexSB' style={{display:'flex !important', flexDirection:'row !important', justifyContent:'space-between'}}>
                    
                     <div className='text1'>
                       <h2>{val.title}</h2>

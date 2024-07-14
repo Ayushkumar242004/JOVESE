@@ -14,7 +14,7 @@ const Header = () => {
       <Head />
       <header className>
         <nav className='flexSB '>
-          <ul className={click ? "mobile-nav" : "flexSB "} onClick={() => setClick(false)}>
+          <ul className={"flexSB "} onClick={() => setClick(false)}>
             <li>
               <Link to='/'>Home</Link>
             </li>
@@ -54,18 +54,21 @@ const Header = () => {
             )}
              
           </ul>
-         <div className="right" >
-         <Link to="/dashboard" style={{textDecoration:'none'}}>
-            <button className="Dashboard font-bold my-2">Dashboard</button>
-         </Link>
+          <div className="right">
+  <Link to="/dashboard" style={{ textDecoration: 'none' }}>
+    <button className="Dashboard font-bold my-2">Dashboard</button>
+  </Link>
 
-         <Link to="/explore_mentors" style={{textDecoration:'none'}}>
-          <button className="Mentor font-bold my-2" > Find your mentor</button>
-          </Link>
-         </div>
-          <button className='toggle' onClick={() => setClick(!click)}>
-            {click ? <i className='fa fa-times'> </i> : <i className='fa fa-bars'></i>}
-          </button>
+  <Link to="/explore_mentors" style={{ textDecoration: 'none' }}>
+    <button className="Mentor font-bold my-2">Find your mentor</button>
+  </Link>
+</div>
+         {/* <button
+            className="toggle"
+            onClick={() => setClick(!click)}
+          >
+            {click ? <i className="fa fa-times"></i> : <i className="fa fa-bars"></i>}
+          </button> */}
         </nav>
       </header>
     </>

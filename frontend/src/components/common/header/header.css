@@ -1,4 +1,6 @@
 /*--------head------------*/
+
+
 .head {
   padding: 20px 0;
   color: #fff;
@@ -155,9 +157,12 @@ header ul li a:hover {
   background-color: red!important;
   color:white;
 }
+.right {
+  display: block;
+}
 
-@media screen and (max-width: 1000px) {
+@media (max-width: 1024px) {
   .right {
-    flex-direction: column;
+    display: none;
   }
 }

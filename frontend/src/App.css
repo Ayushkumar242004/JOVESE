@@ -4,10 +4,17 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Roboto", sans-serif;
   background-color: #f8f8f8;
 }
+
+body {
+  min-width: 768px; /* set the minimum width to 768px */
+}
+
+
 /*------------global-----------*/
 .container {
   max-width: 85%;
@@ -19,18 +26,18 @@ body {
   justify-content: space-between;
 }
 .icon {
-  width: 40px;
+  width: 30px;
   height: 40px;
   line-height: 40px;
   border-radius: 50%;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #1eb2a6;
+  
+ 
   transition: 0.5s;
 }
 .icon:hover {
   cursor: pointer;
-  background-color: #1eb2a6;
+ 
   color: #fff;
 }
 a {

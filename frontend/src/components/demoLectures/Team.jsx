@@ -173,15 +173,23 @@ const Team = () => {
             </div>
             <div className="h-full w-full relative">
               <img
-                src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb"
                 alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
                 className="rounded-lg bg-gray-100 object-cover h-full w-full"
               />
             </div>
 
-            {/* video */}
+            
+
+
+          </div>
+
+        </div>
+      </div>
+
+        {/* video */}
             <div className="h-full w-full relative ">
-              <div
+            <div
                 style={{
                   textAlign: "center",
                   display: "flex",
@@ -194,8 +202,7 @@ const Team = () => {
                   borderRadius: "10px",
                   boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
                   margin: "40px auto",
-                  position: "relative",
-                  left: "50%",
+                  
                 }}
               >
                 Demo lecture
@@ -205,21 +212,17 @@ const Team = () => {
                   borderRadius: "30px",
                   position: "relative",
                   margin: "0 auto",
-                  height: "500px",
-                  width: "1240px",
+                  width:'80vw',
+                  height:'80vh'
                 }}
                 className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg transition-transform transform hover:scale-105"
-                src={`https://www.youtube.com/embed/jva0G7211l4?autoplay=1&rel=0&showinfo=0&modestbranding=1`}
+                src={`https://www.youtube.com/embed/1ibsQrnuEEg?enablejsapi=1`}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
             </div>
-          </div>
-        </div>
-      </div>
-
       <div>
         <div class="bg-white py-24 sm:py-32">
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
