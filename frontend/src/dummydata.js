@@ -3,20 +3,20 @@ export const homeAbout = [
     id: 1,
     cover: "https://img.icons8.com/dotty/80/000000/storytelling.png",
     title: "Online Courses",
-    desc: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    desc: "Learn at your own pace, anytime, anywhere.",
   },
  
   {
     id: 2,
     cover: "https://img.icons8.com/ios/80/000000/athlete.png",
     title: "Learn with Expert",
-    desc: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    desc: " Access courses and experts from around the world.",
   },
   {
     id: 3,
     cover: "https://img.icons8.com/ios/80/000000/athlete.png",
     title: "Learn with Expert",
-    desc: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    desc: "Save on transportation, accommodation, and textbook costs.",
   },
 ]
 export const awrapper = [
@@ -284,22 +284,22 @@ export const price = [
   {
     name: "BASIC PLAN",
     price: "49K",
-    desc: " Q1 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    desc: "Q1 How do I access my course materials?",
   },
   {
     name: "BEGINNER PLAN",
     price: "79K",
-    desc: "Q2 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    desc: "Q2 How long do I have to complete a course? ",
   },
   {
     name: "PREMIUM PLAN",
     price: "109k",
-    desc: "Q3 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    desc: "Q3 Can I take a course at my own pace?",
   },
   {
     name: "ULTIMATE PLAN",
     price: "149K",
-    desc: "Q4 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+    desc: "What are the system requirements for online learning?",
   },
 ]
 export const faq = [
@@ -332,19 +332,19 @@ export const blog = [
   {
     id: 1,
     title: "Build your Dream Software & Engineering Career",
-    desc: "A small river named Duden flows by their place and supplies it with the necessary regelialia.",
+    desc: " Determine what you want to achieve through online learning. What skills do you want to acquire? What topics do you want to explore? What are your career goals?",
     cover: "../images/blog/b1.webp",
   },
   {
     id: 2,
     title: "Build your Dream Software & Engineering Career",
-    desc: "A small river named Duden flows by their place and supplies it with the necessary regelialia.",
+    desc: "Select a suitable online learning platform that aligns with your goals. Popular options include MOOCs (Massive Open Online Courses) like Coursera, edX, and Udemy, as well as online courses and tutorials on YouTube, LinkedIn Learning, and Skillshare.",
     cover: "../images/blog/b2.webp",
   },
   {
     id: 3,
     title: "Build your Dream Software & Engineering Career",
-    desc: "A small river named Duden flows by their place and supplies it with the necessary regelialia.",
+    desc: "Create a dedicated learning space with a stable internet connection, a comfortable workspace, and minimal distractions. Ensure you have the necessary hardware and software to access your chosen platform and complete coursework.",
     cover: "../images/blog/b3.webp",
   },
   {
