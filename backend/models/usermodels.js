@@ -22,6 +22,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  confirmPassword:{
+    type: String,
+  },
   profileLink:{
     type:String,
   }
@@ -83,7 +86,7 @@ userSchema.methods.isPasswordValid = async function (password) {
 };
 
 // Method to generate JWT token
-userSchema.methods.generateToken = function () {
+userSchema.methods.generateToken = async function () {
   try {
     const token = jwt.sign(
       {
@@ -91,7 +94,10 @@ userSchema.methods.generateToken = function () {
         email: this.email,
         role: this.role,
       },
-      process.env.JWT_SECRET_KEY
+      process.env.JWT_SECRET_KEY,
+      {
+        expiresIn:"30d",
+      }
     );
     return token;
   } catch (error) {
