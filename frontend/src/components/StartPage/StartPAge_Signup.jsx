@@ -16,7 +16,7 @@ const StartPage_signup = () => {
                 Student
             </button>
         </Link>
-        <Link to="/MentorSignup">
+        <Link to="/signup">
             <button type="button">
                 Mentor
             </button>

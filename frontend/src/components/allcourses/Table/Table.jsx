@@ -112,151 +112,153 @@ const UserDashboard = () => {
   };
 
   return (
-    <div className="user-dashboard">
+    <div className="user-dashboard" >
       <h1>User Dashboard</h1>
-      <form>
-        <div className="user-info">
-          <label>First Name</label>
-          {isEditing ? (
-            <input
-              type="text"
-              name="firstname"
-              value={formData.firstname}
-              onChange={handleChange}
-            />
-          ) : (
-            <p>{user.firstname}</p>
-          )}
-        </div>
-        <div className="user-info">
-          <label>Last Name</label>
-          {isEditing ? (
-            <input
-              type="text"
-              name="lastname"
-              value={formData.lastname}
-              onChange={handleChange}
-            />
-          ) : (
-            <p>{user.lastname}</p>
-          )}
-        </div>
-        <div className="user-info">
-          <label>Username</label>
-          {isEditing ? (
-            <input
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-            />
-          ) : (
-            <p>{user.username}</p>
-          )}
-        </div>
-        <div className="user-info">
-          <label>Gender</label>
-          {isEditing ? (
-            <select
-              name="gender"
-              value={formData.gender}
-              onChange={handleChange}
-            >
-              <option value="">Select Gender</option>
-              {genders.map((gender) => (
-                <option key={gender} value={gender}>
-                  {gender}
-                </option>
-              ))}
-            </select>
-          ) : (
-            <p>{user.gender}</p>
-          )}
-        </div>
-        <div className="user-info">
-          <label>Country</label>
-          {isEditing ? (
-            <select
-              name="country"
-              value={formData.country}
-              onChange={handleChange}
-            >
-              <option value="">Select Country</option>
-              {countries.map((country) => (
-                <option key={country} value={country}>
-                  {country}
-                </option>
-              ))}
-            </select>
-          ) : (
-            <p>{user.country}</p>
-          )}
-        </div>
-        <div className="user-info">
-          <label>Work Experiences</label>
-          {isEditing ? (
-            <textarea
-              name="workExperiences"
-              value={formData.workExperiences}
-              onChange={handleChange}
-            />
-          ) : (
-            <p>{user.workExperiences}</p>
-          )}
-        </div>
-        <div className="user-info">
-          <label>Profile Link</label>
-          {isEditing ? (
-            <input
-              type="text"
-              name="profileLink"
-              value={formData.profileLink}
-              onChange={handleChange}
-            />
-          ) : (
-            <p>{user.profileLink}</p>
-          )}
-        </div>
-        <div className="user-info">
-          <label>Github</label>
-          {isEditing ? (
-            <input
-              type="text"
-              name="github"
-              value={formData.github}
-              onChange={handleChange}
-            />
-          ) : (
-            <p>{user.github}</p>
-          )}
-        </div>
-        <div className="user-info">
-          <label>LinkedIn</label>
-          {isEditing ? (
-            <input
-              type="text"
-              name="linkedIn"
-              value={formData.linkedIn}
-              onChange={handleChange}
-            />
-          ) : (
-            <p>{user.linkedIn}</p>
-          )}
-        </div>
-        <div className="user-info">
-          <label>Twitter</label>
-          {isEditing ? (
-            <input
-              type="text"
-              name="twitter"
-              value={formData.twitter}
-              onChange={handleChange}
-            />
-          ) : (
-            <p>{user.twitter}</p>
-          )}
-        </div>
-      </form>
+      <div >
+        <form>
+          <div className="user-info">
+            <label>First Name</label>
+            {isEditing ? (
+              <input
+                type="text"
+                name="firstname"
+                value={formData.firstname}
+                onChange={handleChange}
+              />
+            ) : (
+              <p>{user.firstname}</p>
+            )}
+          </div>
+          <div className="user-info">
+            <label>Last Name</label>
+            {isEditing ? (
+              <input
+                type="text"
+                name="lastname"
+                value={formData.lastname}
+                onChange={handleChange}
+              />
+            ) : (
+              <p>{user.lastname}</p>
+            )}
+          </div>
+          <div className="user-info">
+            <label>Username</label>
+            {isEditing ? (
+              <input
+                type="text"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+              />
+            ) : (
+              <p>{user.username}</p>
+            )}
+          </div>
+          <div className="user-info">
+            <label>Gender</label>
+            {isEditing ? (
+              <select
+                name="gender"
+                value={formData.gender}
+                onChange={handleChange}
+              >
+                <option value="">Select Gender</option>
+                {genders.map((gender) => (
+                  <option key={gender} value={gender}>
+                    {gender}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <p>{user.gender}</p>
+            )}
+          </div>
+          <div className="user-info">
+            <label>Country</label>
+            {isEditing ? (
+              <select
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
+              >
+                <option value="">Select Country</option>
+                {countries.map((country) => (
+                  <option key={country} value={country}>
+                    {country}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <p>{user.country}</p>
+            )}
+          </div>
+          <div className="user-info">
+            <label>Work Experiences</label>
+            {isEditing ? (
+              <textarea
+                name="workExperiences"
+                value={formData.workExperiences}
+                onChange={handleChange}
+              />
+            ) : (
+              <p>{user.workExperiences}</p>
+            )}
+          </div>
+          <div className="user-info">
+            <label>Profile Link</label>
+            {isEditing ? (
+              <input
+                type="text"
+                name="profileLink"
+                value={formData.profileLink}
+                onChange={handleChange}
+              />
+            ) : (
+              <p>{user.profileLink}</p>
+            )}
+          </div>
+          <div className="user-info">
+            <label>Github</label>
+            {isEditing ? (
+              <input
+                type="text"
+                name="github"
+                value={formData.github}
+                onChange={handleChange}
+              />
+            ) : (
+              <p>{user.github}</p>
+            )}
+          </div>
+          <div className="user-info">
+            <label>LinkedIn</label>
+            {isEditing ? (
+              <input
+                type="text"
+                name="linkedIn"
+                value={formData.linkedIn}
+                onChange={handleChange}
+              />
+            ) : (
+              <p>{user.linkedIn}</p>
+            )}
+          </div>
+          <div className="user-info">
+            <label>Twitter</label>
+            {isEditing ? (
+              <input
+                type="text"
+                name="twitter"
+                value={formData.twitter}
+                onChange={handleChange}
+              />
+            ) : (
+              <p>{user.twitter}</p>
+            )}
+          </div>
+        </form>
+      </div>
       <div className="buttons">
         {isEditing ? (
           <>

@@ -47,7 +47,7 @@ const LoginForm = () => {
   }
   return (
     <>
-    <Back title=" Login for students" />
+    <Back title=" Login" />
     <div className='wrapper' style={{backgroundColor:'black'}}>
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>

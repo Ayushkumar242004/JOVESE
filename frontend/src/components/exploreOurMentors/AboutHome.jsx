@@ -8,7 +8,7 @@ const AboutHome = () => {
   return (
     <>
       <section className='aboutHome'>
-        <div className='container flexSB'>
+        <div className='container flexSB' style={{marginTop:'40rem'}}>
          
           <div className='left row'>
             <img src='./images/about.webp' alt='' />

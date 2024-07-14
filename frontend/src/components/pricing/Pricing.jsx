@@ -28,7 +28,7 @@ export default function Pricing() {
 
       <div>
         <div className="button-container">
-        <button className="hero-button" onClick={() => handleCategoryClick('All')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
+        <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2"onClick={() => handleCategoryClick('All')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
             <span style={{ fontSize: '25px', margin: '10px' }}>All</span>
           </button>
           <button className="hero-button" onClick={() => handleCategoryClick('Frontend')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>

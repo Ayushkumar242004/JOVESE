@@ -45,10 +45,12 @@ const Header = () => {
             ) : (
               <>
                 <li>
-                  <Link to="/signup">SignUp</Link>
+                  {/* <Link to="/signup">SignUp</Link> */}
+                  <Link to="/StartPageSignup">SignUp</Link>
                 </li>
                 <li>
-                  <Link to="/login">Login</Link>
+                  {/* <Link to="/login">Login</Link> */}
+                  <Link to="/StartPageLogin">Login</Link>
                 </li>
               </>
             )}

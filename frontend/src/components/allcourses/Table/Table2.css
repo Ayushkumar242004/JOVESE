@@ -1,11 +1,13 @@
-.user-dashboard {
-    width: 80%;
-    max-width: 600px;
-    margin: 50px auto;
+.user-dashboard { 
+ 
+    width: 60vw;
+   height:80vh;
+    margin: auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
     background-color: #f9f9f9;
+   
   }
   
   .user-dashboard h1 {
