@@ -3,6 +3,8 @@ import Heading from "../common/heading/Heading"
 import PriceCard from "../pricing/PriceCard"
 
 const Hfaq = () => {
+
+
   return (
     <>
       <section className='hprice padding'>

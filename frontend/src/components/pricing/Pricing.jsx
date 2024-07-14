@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom"; // Assuming you're using react-router-dom for navigation
 import Back from "../common/back/Back";
 import "./price.css";
 import { explore_mentors } from '../../dummydata';
@@ -15,12 +16,17 @@ import {
 
 export default function Pricing() {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const history = useHistory();
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
   };
 
-  const filteredMentors = selectedCategory === 'All' ? explore_mentors: explore_mentors.filter(mentor => mentor.job.toLowerCase().includes(selectedCategory.toLowerCase()));
+  const filteredMentors = selectedCategory === 'All' ? explore_mentors : explore_mentors.filter(mentor => mentor.job.toLowerCase().includes(selectedCategory.toLowerCase()));
+
+  const handleMoreInfoClick = (id) => {
+    history.push(`/demo_lectures/${id}`);
+  };
 
   return (
     <>
@@ -28,7 +34,7 @@ export default function Pricing() {
 
       <div>
         <div className="button-container">
-        <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2"onClick={() => handleCategoryClick('All')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
+          <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2" onClick={() => handleCategoryClick('All')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
             <span style={{ fontSize: '25px', margin: '10px' }}>All</span>
           </button>
           <button className="hero-button" onClick={() => handleCategoryClick('Frontend')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
@@ -65,12 +71,12 @@ export default function Pricing() {
       </div>
 
       <div className="mainCard" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-      {filteredMentors.length === 0 ? (
+        {filteredMentors.length === 0 ? (
           <h3 style={{ textAlign: "center", margin: "50px" }}>Currently no mentors are working under this domain</h3>
         ) : (
           filteredMentors.map((mentor) => (
             <div
-              key={mentor.name}
+              key={mentor.id}
               className="top"
               style={{
                 display: "flex",
@@ -98,6 +104,13 @@ export default function Pricing() {
                       <span key={index} className="tag2">{company}</span>
                     ))}
                   </div>
+                  <button
+                    onClick={() => handleMoreInfoClick(mentor.id)}
+                    className="more-info-button"
+                    style={{ marginTop: '10px', backgroundColor: '#1EB2A6', color: 'white', borderRadius: '10px', padding: '10px 20px' }}
+                  >
+                    More Info
+                  </button>
                 </MDBCardBody>
               </MDBCard>
             </div>

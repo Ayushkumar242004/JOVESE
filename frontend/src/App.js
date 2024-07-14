@@ -12,7 +12,7 @@ import Footer from "./components/common/footer/Footer";
 import Home from "./components/home/Home";
 // import ProfilePage from "./components/Mentor/Mentor";
 import SignUp from "./components/SignUp/Signup2"
-import LoginForm from "./components/LoginForm.jsx/LoginForm";
+import LoginForm from "./components/LoginForm/LoginForm";
 import StudentProfile from "./components/StudentProfileForm/StudentProfileForm";
 import StartPagelogin from "./components/StartPage/StartPage_login";
 import StartPageSignup from "./components/StartPage/StartPAge_Signup";
@@ -20,6 +20,7 @@ import Dashboard from "./components/Dashboard/Dashboard"
 import LogOut from "./components/SignUp/Logout";
 import Chat from "./components/Chat/Chat"
 import Payment from "./components/Payment/Payment"
+import TeamPersonal from "./components/demoLectures/TeamPersonal";
 function App() {
   return (
     <>
@@ -29,6 +30,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/dashboard' component={CourseHome} />
           <Route exact path='/demo_lectures' component={Team} />
+          <Route exact path='/demo_lectures/:id' component={TeamPersonal} />
           <Route exact path='/explore_mentors' component={Pricing} />
           <Route exact path='/resumeBuilder' component={Blog} />
           <Route exact path='/loginform_mentors' component={Dashboard} />
