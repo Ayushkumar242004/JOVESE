@@ -23,7 +23,9 @@ const Testimonial = () => {
     setSelectedCategory(category);
   };
   const filteredMentors = selectedCategory === 'All' ? explore_mentors: explore_mentors.filter(mentor => mentor.job.toLowerCase().includes(selectedCategory.toLowerCase()));
-
+  const handleMoreInfoClick = (id) => {
+    history.push(`/demo_lectures/${id}`);
+  };
   return (
     <>
       <Heading subtitle="Know more about our mentors" title="Our Top Mentors" />
@@ -70,7 +72,7 @@ const Testimonial = () => {
         ) : (
           filteredMentors.slice(0,12).map((mentor) => (
             <div
-              key={mentor.name}
+              key={mentor.id}
               className="top"
               style={{
                 display: "flex",
@@ -98,6 +100,13 @@ const Testimonial = () => {
                       <span key={index} className="tag2">{company}</span>
                     ))}
                   </div>
+                  <button
+                    onClick={() => handleMoreInfoClick(mentor.id)}
+                    className="more-info-button"
+                    style={{ marginTop: '10px', backgroundColor: '#1EB2A6', color: 'white', borderRadius: '10px', padding: '10px 20px' }}
+                  >
+                    More Info
+                  </button>
                 </MDBCardBody>
               </MDBCard>
             </div>
