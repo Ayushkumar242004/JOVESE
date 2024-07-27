@@ -98,7 +98,7 @@ p {
   background-image: url("../public/images/back.webp");
   background-size: cover;
   background-attachment: fixed;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   z-index: -1;
@@ -165,8 +165,9 @@ p {
   }
   .back {
     background-position: center;
-    padding-top: 50%;
+    /* padding-top: 50%; */
     height: 80vh;
+    /* width:100vw !important; */
   }
 }
 

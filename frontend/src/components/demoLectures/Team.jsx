@@ -212,10 +212,10 @@ const Team = () => {
                   borderRadius: "30px",
                   position: "relative",
                   margin: "0 auto",
-                  width:'80vw',
-                  height:'80vh'
+                  height:'50vh',
+                  width:'80vh'
                 }}
-                className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg transition-transform transform hover:scale-105"
+                className="relative top-0 left-0 w-full h-full rounded-lg shadow-lg transition-transform transform hover:scale-105"
                 src={`https://www.youtube.com/embed/1ibsQrnuEEg?enablejsapi=1`}
                 title="YouTube video player"
                 frameBorder="0"

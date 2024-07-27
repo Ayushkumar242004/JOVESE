@@ -1,18 +1,30 @@
 import React from "react"
-import { useLocation } from "react-router-dom"
 
 const Back = ({ title }) => {
-  const location = useLocation()
-
   return (
     <>
-      <section className='back'>
-        {/* <h2>Home / {location.pathname.split("/")[1]}</h2> */}
+      <section className="back">      
         <h1 style={{color:'#1eb2a6'}}>{title}</h1>
       </section>
-      <div className='margin'></div>
+      <div ></div>
     </>
   )
 }
 
 export default Back
+
+// style={{
+//   backgroundImage: `url("/images/back.webp")`,
+//   backgroundSize: 'cover',
+//   backgroundAttachment: 'fixed',
+//   position: 'relative',
+//   top: '0',
+//   left: '0',
+//   zIndex: '-1',
+//   width: '100%',
+//   height: '100vh',
+//   paddingTop: '30%',
+//   paddingRight: '50px',
+//   color: '#fff',
+//   textAlign: 'center',
+// }}

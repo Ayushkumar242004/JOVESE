@@ -33,40 +33,40 @@ export default function Pricing() {
       <Back title="Explore mentors" />
 
       <div>
-        <div className="button-container">
-          <button className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2" onClick={() => handleCategoryClick('All')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
+        <div className="buttonContainer" >
+          <div className="mx-2 bg-[#1EB2A6] text-white rounded-lg my-2" onClick={() => handleCategoryClick('All')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
             <span style={{ fontSize: '25px', margin: '10px' }}>All</span>
-          </button>
-          <button className="hero-button" onClick={() => handleCategoryClick('Frontend')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
+          </div>
+          <div className="hero-button" onClick={() => handleCategoryClick('Frontend')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
             <span style={{ fontSize: '25px', margin: '10px' }}>Frontend</span>
-          </button>
-          <button className="hero-button" onClick={() => handleCategoryClick('Backend')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
+          </div>
+          <div className="hero-button" onClick={() => handleCategoryClick('Backend')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
             <span style={{ fontSize: '25px', margin: '10px' }}>Backend</span>
-          </button>
-          <button className="hero-button" onClick={() => handleCategoryClick('Full Stack')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
+          </div>
+          <div className="hero-button" onClick={() => handleCategoryClick('Full Stack')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
             <span style={{ fontSize: '25px', margin: '10px' }}>Full Stack</span>
-          </button>
-          <button className="hero-button" onClick={() => handleCategoryClick('DevOps Engineer')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
+          </div>
+          <div className="hero-button" onClick={() => handleCategoryClick('DevOps Engineer')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
             <span style={{ fontSize: '25px', margin: '10px' }}>Devops</span>
-          </button>
-          <button className="hero-button" onClick={() => handleCategoryClick('Cloud Engineer')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
+          </div>
+          <div className="hero-button" onClick={() => handleCategoryClick('Cloud Engineer')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
             <span style={{ fontSize: '25px', margin: '10px' }}>Cloud Engineering</span>
-          </button>
-          <button className="hero-button" onClick={() => handleCategoryClick('Data Scientist')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
+          </div>
+          <div className="hero-button" onClick={() => handleCategoryClick('Data Scientist')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
             <span style={{ fontSize: '25px', margin: '10px' }}>Data Science</span>
-          </button>
-          <button className="hero-button" onClick={() => handleCategoryClick('Data Analyst')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
+          </div>
+          <div className="hero-button" onClick={() => handleCategoryClick('Data Analyst')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
             <span style={{ fontSize: '25px', margin: '10px' }}>Data Analyst</span>
-          </button>
-          <button className="hero-button" onClick={() => handleCategoryClick('Cybersecurity Specialist')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
+          </div>
+          <div className="hero-button" onClick={() => handleCategoryClick('Cybersecurity Specialist')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
             <span style={{ fontSize: '25px', margin: '10px' }}>Cybersecurity</span>
-          </button>
-          <button className="hero-button" onClick={() => handleCategoryClick('UI/UX Designer')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
+          </div>
+          <div className="hero-button" onClick={() => handleCategoryClick('UI/UX Designer')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
             <span style={{ fontSize: '25px', margin: '10px' }}>UI/UX Designer</span>
-          </button>
-          <button className="hero-button" onClick={() => handleCategoryClick('Blockchain Developer')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
+          </div>
+          <div className="hero-button" onClick={() => handleCategoryClick('Blockchain Developer')} style={{ margin: '10px', backgroundColor: 'black', color: 'white', borderRadius: '10px' }}>
             <span style={{ fontSize: '25px', margin: '10px' }}>Blockchain</span>
-          </button>
+          </div>
         </div>
       </div>
 

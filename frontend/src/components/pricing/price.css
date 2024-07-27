@@ -30,7 +30,18 @@
 
   
 }
-.button-container{
+
+@media (max-width: 768px) {
+  .buttonContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+
+  
+}
+.buttonContainer{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

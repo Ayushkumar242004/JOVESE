@@ -3,10 +3,16 @@ import Heading from "../../common/heading/Heading";
 import { Link } from "react-router-dom";
 import "./Hero.css";
 
-const Hero = () => {
+const Hero = () => { 
+
+  const heroStyle = {
+   width:'100%',
+   marginTop:'-150px'
+  };
+
   return (
     <>
-      <section className="hero">
+      <section className="hero"  style={heroStyle}>
         <div className="container">
           <div className="row">
             <Heading
@@ -43,7 +49,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <div className="margin"></div>
+      <div style={{marginTop:'150px'}}></div>
     </>
   );
 };

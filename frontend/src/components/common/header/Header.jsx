@@ -12,8 +12,8 @@ const Header = () => {
   return (
     <>
       <Head />
-      <header className>
-        <nav className="flexSB ">
+      <header style={{backgroundColor:'#333333', marginLeft:'0px', marginRight:'0px'}}>
+        <nav class="flexSB ">
           <ul className={"flexSB "} onClick={() => setClick(false)}>
             <li>
               <Link to="/">Home</Link>

@@ -31,6 +31,20 @@ const Footer = () => {
             </ul>
            
           </div>
+
+          {/* <div className=' link'>
+            <h3 >Explore</h3>
+            
+            <ul >
+              <li ><Link to="/resumeBuilder" style={{ textDecoration: 'none', color: 'inherit' }}>Resume Builder</Link></li>
+              <li><Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Blog</Link></li>
+              <li><Link to="/dashboard" style={{ textDecoration: 'none', color: 'inherit' }}>How it works?</Link></li>
+              <li><Link to="/explore_mentors" style={{ textDecoration: 'none', color: 'inherit' }}>Explore Mentors</Link></li>
+              <li><Link to="/demo_lectures" style={{ textDecoration: 'none', color: 'inherit' }}>Demo Lecture</Link></li>
+            </ul>
+           
+          </div> */}
+
           <div className='link' >
             <h3>Contacts</h3>
             <ul>

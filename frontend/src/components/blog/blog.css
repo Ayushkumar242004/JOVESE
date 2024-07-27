@@ -32,3 +32,21 @@
 .blog p {
   color: grey;
 }
+
+
+/* Add this CSS to your stylesheet */
+.responsive-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+ 
+  
+}
+
+@media (max-width: 768px) {
+  .responsive-flex-container {
+    flex-direction: column; /* Stack cards in a column for smaller screens */
+    display: flex;
+  }
+}
+

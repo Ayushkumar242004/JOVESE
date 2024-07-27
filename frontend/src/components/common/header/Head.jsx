@@ -3,9 +3,9 @@ import "./header.css";
 const Head = () => {
   return (
     <>
-      <section className="head">
-        <div className="container flexSB">
-          <div className="logo ">
+      <section className="head" style={{backgroundColor:'black'}}> 
+        <div className="container flexSB" style={{ display:'flex',justifyContent:'center'}}>
+          <div className="logo " style={{ display:'flex',justifyContent:'center'}}>
             <div className="flex flex-row gap-2">
               <div>
                 <h1 style={{  fontStyle: "italic" }}>

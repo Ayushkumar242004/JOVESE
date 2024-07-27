@@ -2,16 +2,25 @@
   background-image: url("../../../../public/images/bg.webp");
   background-size: cover;
   background-attachment: fixed;
-  position: absolute;
+  background-position: center;
+  position: relative;
   top: 0;
-  left: 0;
+  left:0; 
   z-index: -1;
-  width: 100%;
+  width: 100%!important;
   height: 100vh;
   padding-top: 20%;
   padding-right: 50px;
   color: #fff;
 }
+
+
+@media (max-width: 768px) {
+  .primary-btn{
+    display:none;
+  } 
+}
+
 .hero #heading h3 {
   color: #fff;
 }
@@ -20,17 +29,17 @@
   margin: 0;
   padding: 0;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1400px) {
   .margin {
-    height: 45vh;
+    height: 47vh;
   }
   .hero {
-    background-position: right;
+    /* background-position: right; */
     padding-top: 50%;
     height: 80vh;
+   
   }
-  .hero .row {
-    
+  .hero .row {    
     width: 100%;
   }
   .button-container {
@@ -46,6 +55,7 @@
     flex-wrap: wrap;
     
   }
+  
   .hero-button {
     margin-right: 20px; /* Adjust as needed */
     margin-bottom: 10px; /* Adjust as needed */
